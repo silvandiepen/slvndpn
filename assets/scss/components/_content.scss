@@ -1,0 +1,42 @@
+.content {
+	padding: grid(1);
+	@include min-(padding, 1, $mobile-padding);
+}
+@import url('https://fonts.googleapis.com/css?family=IBM+Plex+Mono&display=swap');
+
+.content code {
+	font-family: 'IBM Plex Mono', monospace;
+	padding: 0.5rem;
+	line-height: 1.5;
+	color: color(_Black);
+	font-size: 0.8em;
+	background-color: color(_White);
+}
+.content pre code {
+	display: block;
+	padding: 1rem;
+	width: calc(100% + 2rem);
+	margin-left: -1rem;
+	font-size: 1rem;
+	color: color(_White);
+
+	background-color: color(_Black);
+}
+
+.content-row {
+	width: calc(100% + #{grid(1)});
+	margin-left: -grid(0.5);
+	margin-top: grid(1);
+	.column {
+		padding: grid(0.5);
+		p {
+			opacity: 0.7;
+		}
+		h2 {
+			background-color: color(Red);
+			border: 2px solid red;
+			display: inline-block;
+			padding: 0 0.25em;
+		}
+	}
+}
