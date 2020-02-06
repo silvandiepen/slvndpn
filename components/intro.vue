@@ -28,7 +28,8 @@
 		bottom: 0;
 		transform: translateY(100%);
 		font-size: grid(6);
-		animation: comeUp $base-transition $base-transition $base-cubic-bezier forwards;
+		animation: comeUp $base-transition $base-transition $base-cubic-bezier
+			forwards;
 		@at-root {
 			@keyframes comeUp {
 				to {

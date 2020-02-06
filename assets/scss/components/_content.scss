@@ -23,6 +23,14 @@
 	background-color: color(_Black);
 }
 
+.content hr {
+	margin: 1em 0;
+	padding: 0;
+	height: 2px;
+	background-color: currentColor;
+	color: currentColor;
+	border: none;
+}
 .content-row {
 	width: calc(100% + #{grid(1)});
 	margin-left: -grid(0.5);

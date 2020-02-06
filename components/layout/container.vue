@@ -1,7 +1,12 @@
 <template>
 	<section
 		ref="inviewElement"
-		:class="[wasInview ? 'was-inview' : '', inview ? 'inview' : '', ontop ? 'ontop' : '', onbottom ? 'onbottom' : '']"
+		:class="[
+			wasInview ? 'was-inview' : '',
+			inview ? 'inview' : '',
+			ontop ? 'ontop' : '',
+			onbottom ? 'onbottom' : ''
+		]"
 	>
 		<slot></slot>
 	</section>
@@ -58,7 +63,10 @@ export default {
 			this.container.top = window.scrollY;
 			this.container.bottom = window.scrollY + window.innerHeight;
 
-			if (this.element.top > this.container.bottom || this.element.bottom < this.container.top) {
+			if (
+				this.element.top > this.container.bottom ||
+				this.element.bottom < this.container.top
+			) {
 				this.inview = false;
 			} else {
 				this.wasInview = true;
@@ -70,7 +78,10 @@ export default {
 
 			// If onBottom
 
-			this.offTop = window.scrollY + this.container.height >= this.container.windowHeight ? true : false;
+			this.offTop =
+				window.scrollY + this.container.height >= this.container.windowHeight
+					? true
+					: false;
 		}
 	}
 };

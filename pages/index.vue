@@ -5,8 +5,8 @@
 		</PageHeading>
 		<PageContent>
 			<h3>
-				Hi! My name is Sil van Diepen. I’m a dad, make images, code, talk bullshit, eat and sleep. And this… This is my
-				website…
+				Hi! My name is Sil van Diepen. I’m a dad, make images, code, talk
+				bullshit, eat and sleep. And this… This is my website…
 			</h3>
 		</PageContent>
 
@@ -21,41 +21,69 @@
 				<div class="column small-full medium-half pop-column">
 					<h2>Design Systems</h2>
 					<h4>
-						You a design system and you a design system! Everybody A design system.
+						You a design system and you a design system! Everybody A design
+						system.
 					</h4>
 					<p>
-						It sounds so easy, but (un)fortunately it is not that easy. There are many ways to build a design system and I've
-						tried them all. Currently I am working at Transavia where I'm working on their design system which will be used in
-						many ways with a main focus on the corporate website.
+						It sounds so easy, but (un)fortunately it is not that easy. There
+						are many ways to build a design system and I've tried them all.
+						Currently I am working at Transavia where I'm working on their
+						design system which will be used in many ways with a main focus on
+						the corporate website.
 					</p>
 				</div>
 				<div class="column small-full medium-half  pop-column">
 					<h2>Web Components</h2>
 					<h4>The future of the web is coming.</h4>
 					<p>
-						Wow, really.. the future is coming? You won't say! Anyway.. Web components have been around for quite a while but
-						never were they so well supported as they are now finally. That's why I jumped full into them.,
+						Wow, really.. the future is coming? You won't say! Anyway.. Web
+						components have been around for quite a while but never were they so
+						well supported as they are now finally. That's why I jumped full
+						into them.,
 					</p>
 				</div>
 				<div class="column small-full medium-half  pop-column">
 					<h2>Vue</h2>
 					<h4>React, Angular or Vue.. gotta choose..</h4>
 					<p>
-						No you don't have to choose but I kinda still did. Although I don't have a problem and I do see good things in all
-						frameworks. I do prefer Vue, just because it feels easiest to me and I have most fun actually building things
-						using Vue.
+						No you don't have to choose but I kinda still did. Although I don't
+						have a problem and I do see good things in all frameworks. I do
+						prefer Vue, just because it feels easiest to me and I have most fun
+						actually building things using Vue.
 					</p>
 				</div>
 				<div class="column small-full medium-half  pop-column">
 					<h2>Sass</h2>
 					<h4>CSS on Steroids without JS!</h4>
 					<p>
-						It's been around for ages and there are new techniques but I still prefer my Sass and I still think Sass has a
-						bright future.
+						It's been around for ages and there are new techniques but I still
+						prefer my Sass and I still think Sass has a bright future.
 					</p>
 				</div>
 			</div>
 		</PageContent>
+		<div class="row small-full medium-half">
+			<PageBlock class="column background--yellow">
+				<h2>Projects</h2>
+				<p>
+					Just for fun, as an idea or sometimes handy in development. I've
+					created lots of projects and some are still a work in progress (as it
+					should be). Here's an overview of some of the personal projects I'm
+					working on..
+				</p>
+				<TheButton link="/code/projects">Go to Projects</TheButton>
+			</PageBlock>
+			<PageBlock class="column background--pink">
+				<h2>Packages</h2>
+				<p>
+					While doing my work, personal and for the monies. I don't like copy
+					pasting code back and forwards from project to project. And why not
+					share them with the rest of world? Thats why I make them into packages
+					which everyone can use.
+				</p>
+				<TheButton link="/code/packages">Go to Packages</TheButton>
+			</PageBlock>
+		</div>
 	</main>
 </template>
 
@@ -71,25 +99,29 @@ export default {
 					link: '#',
 					color: 'blue',
 					title: 'Chami',
-					image: 'http://api.silvandiepen.nl/wp-content/uploads/2019/09/chami.png'
+					image:
+						'http://api.silvandiepen.nl/wp-content/uploads/2019/09/chami.png'
 				},
 				{
 					link: '#',
 					color: 'brown',
 					title: 'Chernobyl',
-					image: 'http://api.silvandiepen.nl/wp-content/uploads/2019/09/1526-1024x683.jpg'
+					image:
+						'http://api.silvandiepen.nl/wp-content/uploads/2019/09/1526-1024x683.jpg'
 				},
 				{
 					link: '#',
 					color: 'skyblue',
 					title: 'Ice Cream',
-					image: 'http://api.silvandiepen.nl/wp-content/uploads/2019/09/icecream-color-06-1024x1024.png'
+					image:
+						'http://api.silvandiepen.nl/wp-content/uploads/2019/09/icecream-color-06-1024x1024.png'
 				},
 				{
 					link: '#',
 					color: 'yellow',
 					title: 'Bananana',
-					image: 'http://api.silvandiepen.nl/wp-content/uploads/2019/09/banana1-1024x1024.jpg'
+					image:
+						'http://api.silvandiepen.nl/wp-content/uploads/2019/09/banana1-1024x1024.jpg'
 				}
 			]
 		};

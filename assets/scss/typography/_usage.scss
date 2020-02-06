@@ -13,14 +13,16 @@ h6 {
 h1 {
 	font-size: grid(1.5);
 	line-height: 1;
+	font-weight: 300;
 	@include min-(font-size, 1, 48);
 	@include max-(font-size, 1, 96);
 }
 h2 {
-	font-size: grid(0.75);
+	font-size: grid(1);
 	line-height: 1.2;
-	@include min-(font-size, 0.75, 32);
-	@include max-(font-size, 0.75, 80);
+	font-weight: 300;
+	@include min-(font-size, 1, 32);
+	@include max-(font-size, 1, 80);
 }
 h3 {
 	font-size: grid(0.5);
@@ -36,7 +38,13 @@ h4 {
 }
 h5 {
 	line-height: 1.5;
-	font-size: 1rem;
+	font-size: 1.25rem;
+}
+h6 {
+	line-height: 1.5;
+	font-size: 0.875rem;
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
 }
 
 li,

@@ -1,5 +1,8 @@
 <template>
-	<div :class="['slides__item', `background--${color}`]" :style="`background-image:url(${image})`">
+	<div
+		:class="['slides__item', `background--${color}`]"
+		:style="`background-image:url(${image})`"
+	>
 		<div class="slides__content">
 			<h3 class="slides__title">
 				{{ title }}

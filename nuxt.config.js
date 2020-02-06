@@ -1,5 +1,6 @@
 import pkg from './package';
 import config from './config/latest';
+// import Github from './helpers/github.js';
 
 if (config.env === 'development') {
 	process.env.DEBUG = 'nuxt:*';
@@ -49,7 +50,8 @@ module.exports = {
 		},
 		{
 			src: '~/plugins/global.mixins.js'
-		}
+		},
+		{ src: '~/plugins/vuex-persist', ssr: false }
 	],
 
 	/*

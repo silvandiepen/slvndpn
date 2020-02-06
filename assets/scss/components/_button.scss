@@ -1,0 +1,54 @@
+.button {
+	position: relative;
+	display: inline-block;
+	color: var(--bg);
+	text-decoration: none;
+	font-weight: 600;
+	padding: 1em 1.25em;
+	line-height: 1em;
+	border-radius: 1.5em;
+	transition: 0.3s;
+	z-index: 1;
+	&:focus,
+	&:hover {
+		transform: translateX(-0.75rem);
+		&:after {
+			transform: translateX(1.5rem);
+		}
+	}
+	&:before {
+		transition: 0.3s;
+		background-color: var(--text);
+		border-radius: inherit;
+		height: 100%;
+		width: 100%;
+		position: absolute;
+		left: 0;
+		top: 0;
+		content: '';
+		z-index: -1;
+	}
+	&:after {
+		transition: 0.3s;
+		background-color: hsla(
+			var(--bg-h),
+			var(--bg-s),
+			calc(var(--bg-l) * 5),
+			0.5
+		);
+
+		border-radius: inherit;
+		height: 100%;
+		width: 100%;
+		position: absolute;
+		left: 0;
+		top: 0;
+		content: '';
+		z-index: -2;
+	}
+	&__text {
+		&:after {
+			content: '→';
+		}
+	}
+}

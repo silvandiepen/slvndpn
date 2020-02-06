@@ -15,15 +15,15 @@ export default {
 	components: {
 		BlogList: () => import('~/components/blog/list.vue')
 	},
+	async asyncData({ store }) {
+		await store.dispatch('articles/fetchArticles');
+	},
 	computed: {
 		article() {
 			return this.$store.getters['articles/article'](
 				this.$route.params.article
 			);
 		}
-	},
-	async asyncData({ store }) {
-		await store.dispatch('articles/fetchArticles');
 	}
 };
 </script>

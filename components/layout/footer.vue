@@ -15,7 +15,7 @@ export default {};
 
 // Footer styles
 .footer {
-	background-color: color(MagentaDark);
+	background-color: color(PlumDark);
 	color: color(White);
 	text-align: center;
 	padding: grid(1);

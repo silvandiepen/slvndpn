@@ -6,14 +6,15 @@
 				:key="idx"
 				class="article-list__item"
 			>
-				<span class="article-list__date"
-					>{{ article.date_obj.y }}.{{ addZeros(article.date_obj.m) }}.{{
+				{{ article }}
+				<!-- <span v-if="article.date_obj" class="article-list__date">
+					{{ article.date_obj.y }}.{{ addZeros(article.date_obj.m) }}.{{
 						addZeros(article.date_obj.d)
-					}}</span
-				>
-				<NuxtLink :to="`/blog/${article.uri}`" class="article-list__link">
+					}}
+				</span> -->
+				<!-- <NuxtLink :to="`/blog/${article.uri}`" class="article-list__link">
 					<span class="article-list__text">{{ article.title }}</span>
-				</NuxtLink>
+				</NuxtLink> -->
 			</li>
 		</ul>
 	</PageContent>
