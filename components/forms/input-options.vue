@@ -1,10 +1,13 @@
 <template>
-	<InputField type="options">
+	<InputField ref="optionParent" type="options">
 		<label v-if="label" class="input-field__group-label">{{ label }}</label>
 		<div
+			ref="optionGroup"
 			class="input-field__group"
 			:class="[
-				group ? `input-field__group--${group}` : 'input-field__group--inline'
+				groupType
+					? `input-field__group--${groupType}`
+					: 'input-field__group--inline'
 			]"
 		>
 			<InputOption
@@ -30,9 +33,39 @@ export default {
 		...DefaultProps,
 		...GroupProps
 	},
+	data: () => ({
+		overruleGroupType: false
+	}),
 	computed: {
+		groupType() {
+			return this.overruleGroupType || this.$props.group;
+		},
 		optionType() {
 			return this.$props.multi ? 'checkbox' : 'radio';
+		}
+	},
+	mounted() {
+		const elements = {
+			parent: this.$refs.optionParent.$parent.$el.offsetWidth,
+			group: this.$refs.optionGroup.offsetWidth
+		};
+		this.overruleGroupType = this.checkWidth(elements.parent, elements.group);
+		if (this.$props.group == 'inline' || this.$props.group == 'inline-space') {
+			window.addEventListener('resize', () => {
+				this.overruleGroupType = false;
+				setTimeout(() => {
+					this.overruleGroupType = this.checkWidth(
+						elements.parent,
+						elements.group
+					);
+				}, 10);
+			});
+		}
+	},
+	methods: {
+		checkWidth(parent, element) {
+			if (parent < element) return 'stack';
+			else return false;
 		}
 	}
 };
@@ -65,7 +98,13 @@ $base-border-radius: 1rem;
 				--border-top-right: #{$base-border-radius};
 			}
 			.input-field--option:not(:first-child) label {
-				border-left: 0px;
+				margin-left: -2px; // border-left: 0px;
+			}
+		}
+		&--inline,
+		&--inline-space {
+			.input-field__text {
+				white-space: nowrap;
 			}
 		}
 		&--stack {
@@ -78,7 +117,8 @@ $base-border-radius: 1rem;
 				--border-bottom-right: #{$base-border-radius};
 			}
 			.input-field--option:not(:first-child) label {
-				border-top: 0px;
+				margin-top: -2px;
+				//	border-top: 0px;
 			}
 		}
 	}

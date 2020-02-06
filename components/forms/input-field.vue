@@ -19,7 +19,7 @@ export default {
 		margin-top: 1em;
 	}
 	&__group {
-		display: flex;
+		display: inline-flex;
 		.input-field + .input-field {
 			margin-top: 0;
 		}

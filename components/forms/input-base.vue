@@ -3,6 +3,9 @@ export default {
 	data: () => ({
 		ID: null
 	}),
+	created() {
+		this.ID = this.createID();
+	},
 	methods: {
 		createID(prefix = null) {
 			return (
@@ -12,9 +15,6 @@ export default {
 					.substr(2, 9)
 			);
 		}
-	},
-	created() {
-		this.ID = this.createID();
 	}
 };
 </script>

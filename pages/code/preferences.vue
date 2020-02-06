@@ -8,7 +8,7 @@
 			</p>
 		</PageHeading>
 
-		<div class="row small-full medium-half">
+		<div class="row small-full large-half">
 			<PageBlock class="column background--plum">
 				<h2>JavaScript</h2>
 

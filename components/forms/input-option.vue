@@ -42,6 +42,7 @@ export default {
 			opacity: 0;
 		}
 		input + label {
+			// animation: bumpOut 0.1s;
 			padding: 1em;
 			border: 2px solid currentColor;
 			border-radius: var(--border-top-left, var(--border, 0))
@@ -49,11 +50,46 @@ export default {
 				var(--border-bottom-right, var(--border, 0))
 				var(--border-bottom-left, var(--border, 0));
 		}
+		input:focus + label {
+			.input-field__text {
+				display: block;
+				transform: scale(1.05);
+			}
+		}
 		input:checked + label {
 			background-color: currentColor;
 			.input-field__text {
 				color: var(--bg);
 			}
+			@at-root {
+				@keyframes bump {
+					0% {
+						transform: scale(1);
+					}
+
+					80% {
+						transform: scale(1.05);
+					}
+
+					100% {
+						transform: scale(1);
+					}
+				}
+				@keyframes bumpOut {
+					0% {
+						transform: scale(1);
+					}
+
+					80% {
+						transform: scale(0.9);
+					}
+
+					100% {
+						transform: scale(1);
+					}
+				}
+			}
+			animation: bump 0.15s;
 		}
 	}
 }

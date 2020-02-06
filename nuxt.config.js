@@ -5,6 +5,7 @@ import config from './config/latest';
 if (config.env === 'development') {
 	process.env.DEBUG = 'nuxt:*';
 }
+console.log(process.env);
 
 module.exports = {
 	mode: 'universal',
