@@ -19,3 +19,5 @@ dist
 config/latest.js
 static/sw.js
 static/icons
+
+.env

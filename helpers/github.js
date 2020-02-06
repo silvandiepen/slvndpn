@@ -1,7 +1,6 @@
-import config from '../config/latest';
 const Octokit = require('@octokit/rest');
 const octokit = new Octokit({
-	auth: config.github
+	auth: process.env.GITHUB_CLIENT
 });
 
 const getUri = (str) => {
