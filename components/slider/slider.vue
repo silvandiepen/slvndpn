@@ -7,6 +7,7 @@
 				:color="slide.color"
 				:link="slide.link"
 				:image="slide.image"
+				:title="slide.title"
 			/>
 		</div>
 	</Container>

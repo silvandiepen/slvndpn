@@ -50,7 +50,7 @@
 					they are still really nice and sustainable drives.
 				</ContentItem>
 				<ContentItem title="Tablet">
-					An old and crappy <strong>WiPad Air</strong>W which still works and
+					An old and crappy <strong>iPad Air</strong> which still works and
 					usually only comes with me in the airplane. I can’t use the headphone
 					jack so use it with my headphones and the little extender which I need
 					for my phone anyway. It could have been nice actually, but one day.. I

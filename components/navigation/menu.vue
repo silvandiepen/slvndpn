@@ -97,6 +97,7 @@ export default {
 				opacity: 1;
 			}
 			.navigation__item {
+				transition: min-width $base-transition $base-cubic-bezier;
 				min-width: grid(2);
 			}
 		}
@@ -160,7 +161,9 @@ export default {
 		text-align: left;
 		width: 100%;
 		min-width: 0;
-		transition: min-width $base-transition $base-cubic-bezier;
+		transition: min-width #{($base-transition-time * 3)}s #{(
+				$base-transition-time * 5
+			)}s $base-cubic-bezier;
 	}
 	@media #{$medium-down} {
 		position: fixed;
