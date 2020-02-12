@@ -36,7 +36,11 @@ export default {
 	},
 	mounted() {
 		this.init();
-		window.addEventListener('scroll', () => {
+		this.do();
+		window.addEventListener('scroll', () => this.do());
+	},
+	methods: {
+		do() {
 			if (this.scrollTick) {
 				window.requestAnimationFrame(() => {
 					this.setValues();
@@ -44,9 +48,7 @@ export default {
 				});
 			}
 			this.scrollTick = true;
-		});
-	},
-	methods: {
+		},
 		init() {
 			this.container.top = window.scrollY;
 			this.container.bottom = window.scrollY + window.innerHeight;
