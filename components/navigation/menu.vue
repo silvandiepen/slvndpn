@@ -179,7 +179,6 @@ export default {
 		transform: translateY(-100%);
 		transition: transform 0s $base-transition;
 		pointer-events: none;
-		background-color: blue;
 		&--active {
 			pointer-events: all;
 			transform: translateY(0%);

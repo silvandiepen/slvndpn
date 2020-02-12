@@ -39,7 +39,7 @@ export default {
 	&:focus {
 		outline: none;
 		border-radius: 50%;
-		box-shadow: 0 0 0 2px currentColor;
+		color: color(Blue);
 	}
 	span {
 		@include menu($color: currentColor);
