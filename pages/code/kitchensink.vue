@@ -112,11 +112,9 @@
 				<InputOptions group="stack" :options="exampleOptions" />
 
 				<h4>Group Stack + space</h4>
-				<InputOptions
-					group="stack-space"
-					:options="exampleOptions"
-				/> </PageBlock
-			><PageBlock class="column background--yellowdark">
+				<InputOptions group="stack-space" :options="exampleOptions" />
+			</PageBlock>
+			<PageBlock class="column background--yellowdark">
 				<h3>Options + Multiselect</h3>
 				<hr />
 				<h4>Single</h4>

@@ -17,7 +17,9 @@
 		"generate:staging": "cp ./config/staging.js ./config/latest.js && nuxt generate",
 		"generate:production": "cp ./config/production.js ./config/latest.js && nuxt generate",
 		"stylelint": "stylelint '**/*.vue' '**/*.scss'",
-		"stylelint:fix": "stylelint '**/*.vue' '**/*.scss' --fix"
+		"stylelint:fix": "stylelint '**/*.vue' '**/*.scss' --fix",
+		"build:icons": "./scripts/icons.sh",
+		"build:icon": "icon-components --src=static/svg --dest=src/components/icons --prefix icon --template=templates/icon/"
 	},
 	"dependencies": {
 		"@nuxtjs/axios": "^5.9.3",
@@ -30,23 +32,24 @@
 		"vuex-persist": "^2.2.0"
 	},
 	"devDependencies": {
-		"nuxt-rfg-icon": "^0.6.4",
-		"henris": "^1.2.18",
 		"@henris/custom": "^0.0.2",
 		"babel-eslint": "^10.0.3",
 		"eslint": "^6.8.0",
 		"eslint-config-prettier": "^6.9.0",
 		"eslint-friendly-formatter": "^4.0.1",
 		"eslint-loader": "^3.0.3",
-		"eslint-plugin-vue": "^6.1.2",
 		"eslint-plugin-prettier": "^3.1.2",
+		"eslint-plugin-vue": "^6.1.2",
+		"guyn": "*",
+		"henris": "^1.2.18",
+		"icon-components": "0.0.7",
+		"nuxt-rfg-icon": "^0.6.4",
+		"sass": "^1.25.0",
+		"sass-loader": "^8.0.2",
+		"silicons": "*",
 		"stylelint": "^13.0.0",
 		"stylelint-logical-order": "^0.0.6",
-		"stylelint-order": "^4.0.0",
-		"guyn": "*",
-		"silicons": "*",
-		"sass": "^1.25.0",
-		"sass-loader": "^8.0.2"
+		"stylelint-order": "^4.0.0"
 	},
 	"browserslist": [
 		"last 2 versions",

@@ -140,7 +140,6 @@ export default {
 		}
 		&::before {
 			transition: clip-path $base-transition $base-cubic-bezier;
-
 			clip-path: inset(0 100% 0 0);
 		}
 		&::after {
@@ -177,6 +176,7 @@ export default {
 		transform: translateY(-100%);
 		transition: transform 0s $base-transition;
 		pointer-events: none;
+		background-color: blue;
 		&--active {
 			pointer-events: all;
 			transform: translateY(0%);

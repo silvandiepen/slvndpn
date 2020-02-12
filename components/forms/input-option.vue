@@ -9,8 +9,9 @@
 			:name="name"
 		/>
 		<label :for="ID">
-			<span class="input-field__text" v-html="label"/> <slot></slot
-		></label>
+			<span class="input-field__text" v-html="label" />
+			<slot></slot>
+		</label>
 	</InputField>
 </template>
 

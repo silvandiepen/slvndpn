@@ -135,6 +135,7 @@ module.exports = {
 		'vue/this-in-template': 'error',
 		'vue/attributes-order': 'warn',
 		'vue/max-attributes-per-line': 0,
-		'vue/singleline-html-element-content-newline': 0
+		'vue/singleline-html-element-content-newline': 0,
+		'vue/no-v-html': 0
 	}
 };
