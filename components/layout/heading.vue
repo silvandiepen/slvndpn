@@ -19,5 +19,8 @@
 	> .row {
 		margin: 0;
 	}
+	@media #{$small-only} {
+		height: 50vh;
+	}
 }
 </style>

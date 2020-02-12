@@ -99,6 +99,9 @@ export default {
 			.navigation__item {
 				transition: min-width $base-transition $base-cubic-bezier;
 				min-width: grid(2);
+				@media #{$medium-down} {
+					min-width: grid(3);
+				}
 			}
 		}
 	}
