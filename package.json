@@ -9,81 +9,75 @@
 		"dev:local": "sh scripts/local.sh",
 		"dev:staging": "sh scripts/staging.sh",
 		"dev:production": "sh scripts/production.sh",
-		"lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
-		"lint:fix": "eslint --ext .js,.vue --ignore-path .gitignore . --fix",
 		"precommit": "lint && stylelint",
 		"generate": "nuxt generate",
 		"generate:develop": "cp ./config/develop.js ./config/latest.js && nuxt generate",
 		"generate:staging": "cp ./config/staging.js ./config/latest.js && nuxt generate",
 		"generate:production": "cp ./config/production.js ./config/latest.js && nuxt generate",
+		"lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
+		"lint:fix": "eslint --ext .js,.vue --ignore-path .gitignore . --fix",
 		"stylelint": "stylelint '**/*.vue' '**/*.scss'",
 		"stylelint:fix": "stylelint '**/*.vue' '**/*.scss' --fix",
 		"build:icons": "./scripts/icons.sh",
-		"build:icon": "icon-components --src=static/svg --dest=src/components/icons --prefix icon --template=templates/icon/"
+		"test": "jest"
+	},
+	"lint-staged": {
+		"*.{js,vue}": "npm run lint"
+	},
+	"husky": {
+		"hooks": {
+			"pre-commit": "lint-staged"
+		}
 	},
 	"dependencies": {
-		"@nuxtjs/axios": "^5.9.3",
+		"@guyn/ds": "0.0.4",
+		"@nuxtjs/apollo": "^4.0.0-rc19",
+		"@nuxtjs/axios": "^5.9.5",
 		"@nuxtjs/google-analytics": "^2.2.3",
 		"@nuxtjs/pwa": "^3.0.0-beta.19",
-		"@octokit/rest": "^16.38.1",
+		"@octokit/rest": "^17.1.0",
+		"@nuxt/typescript-runtime": "^0.4.0",
 		"@sil/markdown": "^1.0.1",
-		"nuxt": "^2.11.0",
+		"nuxt": "^2.12.0",
 		"vue-async-computed": "^3.8.2",
 		"vuex-persist": "^2.2.0"
 	},
 	"devDependencies": {
 		"@henris/custom": "^0.0.2",
-		"babel-eslint": "^10.0.3",
+		"@nuxt/typescript-build": "^0.6.0",
+		"@nuxtjs/eslint-config-typescript": "^1.0.0",
+		"@nuxtjs/eslint-module": "^1.0.0",
+		"@nuxtjs/stylelint-module": "^3.1.0",
+		"@vue/test-utils": "^1.0.0-beta.27",
+		"babel-eslint": "^10.1.0",
+		"babel-jest": "^24.1.0",
 		"eslint": "^6.8.0",
-		"eslint-config-prettier": "^6.9.0",
+		"eslint-config-prettier": "^6.10.0",
 		"eslint-friendly-formatter": "^4.0.1",
 		"eslint-loader": "^3.0.3",
+		"eslint-plugin-nuxt": ">=0.4.2",
 		"eslint-plugin-prettier": "^3.1.2",
-		"eslint-plugin-vue": "^6.1.2",
+		"eslint-plugin-vue": "^6.2.2",
 		"guyn": "*",
 		"henris": "^1.2.18",
+		"husky": "^4.0.0",
 		"icon-components": "0.0.7",
+		"jest": "^24.1.0",
+		"lint-staged": "^10.0.0",
 		"nuxt-rfg-icon": "^0.6.4",
-		"sass": "^1.25.0",
+		"prettier": "^1.19.1",
+		"sass": "^1.26.3",
 		"sass-loader": "^8.0.2",
 		"silicons": "*",
-		"stylelint": "^13.0.0",
+		"stylelint": "^13.2.1",
 		"stylelint-logical-order": "^0.0.6",
-		"stylelint-order": "^4.0.0"
+		"stylelint-order": "^4.0.0",
+		"stylelint-value-no-unknown-custom-properties": "^2.0.0",
+		"ts-jest": "^25.0.0",
+		"vue-jest": "^4.0.0-0"
 	},
 	"browserslist": [
 		"last 2 versions",
 		"not dead"
-	],
-	"stylelint": {
-		"rules": {
-			"at-rule-no-unknown": [
-				true,
-				{
-					"ignoreAtRules": [
-						"if",
-						"for",
-						"else",
-						"each",
-						"mixin",
-						"extend",
-						"include",
-						"content",
-						"at-root",
-						"function"
-					]
-				}
-			],
-			"order/order": [
-				"custom-properties",
-				"dollar-variables",
-				"declarations",
-				"rules"
-			],
-			"indentation": "tab"
-		},
-		"extends": [
-			"stylelint-logical-order"
-		]
-	}
+	]
 }

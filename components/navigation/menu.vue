@@ -1,7 +1,22 @@
 <template>
 	<nav class="navigation" :class="{ 'navigation--active': menuActive }">
-		<ul class="navigation__list">
-			<li v-for="(item, idx) in nav" :key="idx" class="navigation__item">
+		<ul ref="menu" class="navigation__list" @mouseleave="disableSubmenu">
+			<div
+				class="navigation__hover"
+				:style="hoverStyle"
+				:class="styling.hoverClass"
+			/>
+			<li
+				v-for="(item, idx) in nav"
+				:key="idx"
+				class="navigation__item"
+				:class="[
+					{ 'navigation__item--active': activeLink == item.name },
+					`bg--${colors[idx]}`,
+					{ 'navigation__item--has-children': item.children.length > 0 }
+				]"
+				@mouseenter="activateLink(item.name, $event, idx)"
+			>
 				<NuxtLink
 					class="navigation__link"
 					:to="item.path"
@@ -12,13 +27,15 @@
 					</span>
 				</NuxtLink>
 				<ul v-if="item.children.length > 0" class="navigation__sublist">
+					<div class="navigation__subhover" :style="hoverSubStyle" />
 					<li
 						v-for="(subitem, idy) in item.children"
 						:key="idy"
-						class="navigation__item navigation__subitem"
+						class="navigation__subitem"
+						@mouseenter="activateSubLink(item.name, $event)"
 					>
 						<NuxtLink
-							class="navigation__link navigation__sublink"
+							class="navigation__sublink"
 							:to="subitem.path"
 							:aria-label="`Go to ${subitem.name}`"
 						>
@@ -35,19 +52,38 @@
 
 <script>
 export default {
+	data: () => ({
+		activeLink: null,
+		styling: {
+			width: 100,
+			scale: 1,
+			left: 100,
+			backgroundColor: 'red',
+			hoverClass: [],
+			txtClass: []
+		},
+		subStyling: {
+			width: 100,
+			scale: 1,
+			left: 100
+		},
+		hoverStyle: null,
+		hoverSubStyle: null,
+		colors: ['plum', 'skyblue', 'army', 'orange']
+	}),
 	computed: {
 		nav() {
 			return this.$router.options.routes
-				.filter((route) => route.path.indexOf(':') < 0)
-				.filter((route) => route.path.indexOf('404') < 0)
-				.filter((route) => route.path.substring(1).indexOf('/') < 0)
+				.filter((route) => route.path.includes(':'))
+				.filter((route) => route.path.includes('404'))
+				.filter((route) => route.path.substring(1).includes('/'))
 				.filter((route) => route.name !== 'index')
 				.map((route) => {
 					return {
 						name: route.name,
 						path: route.path,
 						children: this.$router.options.routes
-							.filter((route) => route.path.indexOf(':') < 0)
+							.filter((route) => !route.path.includes(':'))
 							.filter(
 								(subroute) =>
 									subroute.path.indexOf(route.name) > 0 &&
@@ -72,8 +108,69 @@ export default {
 		}
 	},
 	watch: {
-		$route: function() {
+		$route() {
 			this.$store.dispatch('ui/setMenuActive', false);
+		},
+		styling: {
+			handler() {
+				this.hoverStyle = {
+					height: `${this.styling.height}px`,
+					width: `${this.styling.width}px`,
+					transform: `translateX(${this.styling.left}px) scale(${this.styling.scale})`
+				};
+			},
+			deep: true
+		},
+		subStyling: {
+			handler() {
+				this.hoverSubStyle = {
+					height: `${this.subStyling.height}px`,
+					width: `${this.subStyling.width}px`,
+					transform: `translateY(${this.subStyling.top}px) scale(${this.subStyling.scale})`
+				};
+			},
+			deep: true
+		}
+	},
+	methods: {
+		activateLink(link, event, i) {
+			this.activeLink = link;
+			this.styling.left = Math.round(
+				event.target.getBoundingClientRect().left -
+					this.$refs.menu.getBoundingClientRect().left
+			);
+			this.styling.width = Math.round(
+				event.target.getBoundingClientRect().width
+			);
+			// this.styling.height = Math.round(
+			// 	event.target.getBoundingClientRect().height
+			// );
+			this.styling.hoverClass = [`bg--${this.colors[i]}`];
+			this.styling.txtClass = [`bg--${this.colors[i]}`];
+
+			this.styling.scale = 1;
+			this.subStyling.scale = 0;
+		},
+		activateSubLink(link, event) {
+			this.activeLink = link;
+			this.subStyling.top = Math.round(
+				event.target.getBoundingClientRect().top -
+					this.$refs.menu.getBoundingClientRect().top -
+					this.$refs.menu.getBoundingClientRect().height
+			);
+			this.subStyling.width = Math.round(
+				event.target.getBoundingClientRect().width
+			);
+			this.subStyling.height = Math.round(
+				event.target.getBoundingClientRect().height
+			);
+
+			this.subStyling.scale = 1;
+		},
+		disableSubmenu() {
+			this.activeLink = null;
+			this.styling.scale = 0;
+			this.subStyling.scale = 0;
 		}
 	}
 };
@@ -83,98 +180,121 @@ export default {
 @import '~tools';
 .navigation {
 	&__list {
+		position: relative;
 		display: flex;
-		@media #{$medium-down} {
+		@media #{$small-only} {
 			flex-direction: column;
 			transform: translateY(100%);
 			opacity: 0;
 			transition: transform $base-transition $base-cubic-bezier,
 				opacity $base-transition $base-cubic-bezier;
 		}
-		&:focus-within,
-		&:hover {
-			.navigation__sublist {
-				opacity: 1;
-			}
-			.navigation__item {
-				transition: min-width $base-transition $base-cubic-bezier;
-				min-width: grid(2);
-				@media #{$medium-down} {
-					min-width: grid(3);
-				}
-			}
-		}
+		// &:focus-within,
+		// &:hover {
+		// 	.navigation__sublist {
+		// 		opacity: 1;
+		// 	}
+		// 	.navigation__item {
+		// 		transition: min-width $base-transition $base-cubic-bezier;
+		// 		min-width: grid(2);
+		// 		@media #{$medium-down} {
+		// 			min-width: grid(3);
+		// 		}
+		// 	}
+		// }
+	}
+	&__hover {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 20px;
+		height: 3.25rem;
+		border-radius: $base-border-radius;
+		background: var(--bg);
+		opacity: 0.25;
+		transition: all $base-transition $base-bounce-bezier;
+	}
+	&__subhover {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 20px;
+		height: 3.25rem;
+		border-radius: $base-border-radius;
+		background: var(--bg);
+		opacity: 0.25;
+		transition: all $base-transition $base-bounce-bezier;
 	}
 	&__link {
-		display: inline-block;
-		color: currentColor;
-		font-size: 1.5rem;
-		line-height: 1.5rem;
-		text-decoration: none;
-		padding: 1rem 1rem;
 		position: relative;
-		width: 100%;
+		display: inline-block;
+		box-shadow: 0 0 0 0px var(--bg);
+		border-radius: $base-border-radius;
+		color: inherit;
+		font-size: 1.5rem;
+		line-height: 1.5;
+		text-decoration: none;
+		overflow: hidden;
+		padding: 0.4rem 1.5rem 0.6rem 1.5rem;
+		// transition: box-shadow $base-transition $base-bounce-bezier;
 
 		&.active--exact,
 		&.active {
-			color: color(White);
-			&::before {
-				clip-path: inset(0 0 0 0);
-			}
-			&::after {
-				clip-path: inset(100% 0 0 0);
-			}
-		}
-		&:focus {
-			outline: 2px solid color(Red);
-		}
-
-		&::after,
-		&::before {
-			transition: clip-path $base-transition $base-cubic-bezier;
-			z-index: -1;
-			background-color: color(Black);
-			position: absolute;
-			left: 0;
-			top: 0;
-			content: '';
-			width: 100%;
-			height: 100%;
-			display: block;
-		}
-		&::before {
-			transition: clip-path $base-transition $base-cubic-bezier;
-			clip-path: inset(0 100% 0 0);
-		}
-		&::after {
-			transition: clip-path $base-transition $base-transition $base-cubic-bezier;
-			background-color: color(White);
-			clip-path: inset(0 0 0 0);
+			box-shadow: 0 0 0 3px var(--bg);
+			color: var(--bg);
 		}
 	}
 	&__text {
 		color: currentColor;
+		font-weight: 600;
 		font-size: 1.25rem;
 		line-height: 1.5;
-		font-weight: 600;
 		text-decoration: none;
 	}
 	&__item {
 		position: relative;
-		text-align: left;
-		width: 100%;
+		z-index: 2;
 		min-width: 0;
-		transition: min-width #{($base-transition-time * 3)}s #{(
-				$base-transition-time * 5
-			)}s $base-cubic-bezier;
+		color: color(_Black);
+		text-align: left;
+		&--active {
+			color: var(--bg);
+			.navigation__sublist {
+				opacity: 1;
+				pointer-events: all;
+			}
+			.navigation__link:before {
+				transform: scale(1);
+				opacity: 0.25;
+			}
+		}
+		&::before {
+			content: '';
+			position: absolute;
+			top: 100%;
+			left: 50%;
+			z-index: 2;
+			width: 1rem;
+			height: 1rem;
+			border: 3px solid var(--bg);
+			border-radius: $base-border-radius 0 0 0;
+			background-color: white;
+			transform: translateX(-50%) rotate(45deg) scale(0);
+			clip-path: polygon(0 0, 0 100%, 100% 0);
+		}
+		&--has-children:hover {
+			&::before {
+				transform: translateX(-50%) rotate(45deg) scale(1);
+			}
+		}
 	}
-	@media #{$medium-down} {
+	@media #{$small-only} {
 		position: fixed;
-		z-index: 1;
 		top: 0;
 		right: 0;
 		bottom: 0;
 		left: 0;
+		z-index: 1;
 		display: flex;
 		justify-content: center;
 		align-items: center;
@@ -183,9 +303,9 @@ export default {
 		transition: transform 0s $base-transition;
 		pointer-events: none;
 		&--active {
-			pointer-events: all;
 			transform: translateY(0%);
 			transition: transform 0s;
+			pointer-events: all;
 			.navigation__list {
 				transform: translateY(0%);
 				opacity: 1;
@@ -193,17 +313,39 @@ export default {
 		}
 	}
 	&__sublist {
-		@media #{$large-up} {
-			position: absolute;
-			opacity: 0;
-			top: 100%;
-			left: 0;
-		}
-		width: 100%;
+		position: absolute;
+
+		right: 0;
+		z-index: 1;
+		width: 200%;
+		box-shadow: 0 0 0 3px currentColor;
+		border-radius: $base-border-radius;
+		background-color: color(_White);
+		color: var(--bg);
 		transition: opacity $base-transition $base-cubic-bezier;
+		pointer-events: none;
+		padding: grid(0.5);
+		@media #{$medium-up} {
+			position: absolute;
+			top: 100%;
+			left: -50%;
+			opacity: 0;
+		}
 	}
 	&__sublink {
-		padding: 0.25rem 1rem;
+		display: inline-block;
+		border-radius: 1.25rem;
+		line-height: 1.5rem;
+		text-decoration: none;
+		padding: 0.5rem 1rem;
+		&:focus {
+			box-shadow: 0 0 0 2px currentColor inset;
+			outline: none;
+			background-color: color(_Blue, 0.25);
+		}
+		&.active--exact {
+			box-shadow: 0 0 0 2px currentColor inset;
+		}
 	}
 	&__subitem {
 		display: block;
@@ -216,8 +358,8 @@ export default {
 			var(--text-color-b),
 			0.5
 		);
-		font-size: 1rem;
 		font-weight: 400;
+		font-size: 1rem;
 	}
 }
 </style>

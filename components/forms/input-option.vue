@@ -33,13 +33,13 @@ export default {
 			--border: #{$base-border-radius};
 		}
 		label {
-			display: block;
 			position: relative;
+			display: block;
 			padding-left: 1.5em;
 		}
 		input {
-			clip-path: inset(100% 100% 100% 100%);
 			position: absolute;
+			clip-path: inset(100% 100% 100% 100%);
 			opacity: 0;
 		}
 		input + label {
@@ -59,6 +59,7 @@ export default {
 		}
 		input:checked + label {
 			background-color: currentColor;
+			animation: bump 0.15s;
 			.input-field__text {
 				color: var(--bg);
 			}
@@ -90,7 +91,6 @@ export default {
 					}
 				}
 			}
-			animation: bump 0.15s;
 		}
 	}
 }

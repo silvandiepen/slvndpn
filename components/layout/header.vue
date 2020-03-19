@@ -1,28 +1,49 @@
 <template>
-	<header id="header" class="header">
+	<header id="header" class="header" :style="headerStyle">
 		<h3 class="header__logo">
 			<NuxtLink to="/">
 				Sil
 			</NuxtLink>
+			<span>van Diepen</span>
 		</h3>
-		<NavigationTrigger></NavigationTrigger>
-		<NavigationMenu></NavigationMenu>
 	</header>
 </template>
 
-<script>
-import project from '~/package.json';
-import NavigationMenu from '~/components/navigation/menu.vue';
-import NavigationTrigger from '~/components/navigation/trigger.vue';
-export default {
-	components: {
-		NavigationMenu,
-		NavigationTrigger
-	},
+<script lang="ts">
+import Vue from 'vue';
+export default Vue.extend({
+	name: 'Header',
+	components: {},
 	data: () => ({
-		projectName: project.name
-	})
-};
+		projectName: 'Sil',
+		scroll: {
+			position: 0,
+			last: 0,
+			tick: false
+		}
+	}),
+	computed: {
+		headerStyle() {
+			return {
+				'--scroll-top': `${this.scroll.position}px`
+			};
+		}
+	},
+	mounted() {
+		window.addEventListener('scroll', () => {
+			this.scroll.last = window.scrollY;
+
+			if (!this.scroll.tick) {
+				window.requestAnimationFrame(() => {
+					this.scroll.position = this.scroll.last;
+					this.scroll.tick = false;
+				});
+				this.scroll.tick = true;
+			}
+		});
+	},
+	methods: {}
+});
 </script>
 
 <style lang="scss">
@@ -30,9 +51,9 @@ export default {
 
 .header {
 	position: fixed;
-	z-index: 2;
 	top: 0;
 	left: 0;
+	z-index: 2;
 	display: flex;
 	justify-content: space-between;
 	width: 100%;
@@ -43,11 +64,24 @@ export default {
 	}
 	&__logo {
 		z-index: 2;
-		font-size: 1.5rem;
-		line-height: 1.5rem;
-		padding: 1rem 0;
+		display: flex;
+		span,
 		a {
+			display: block;
+			width: 3rem;
+			height: 3rem;
+			background-color: white;
+			font-size: 1.5rem;
+			line-height: 3rem;
 			text-decoration: none;
+		}
+		span {
+			position: fixed;
+			width: auto;
+			background-color: black;
+			color: white;
+			transform: translateX(3rem) translateY(calc(var(--scroll-top) * -1 / 4));
+			padding: 0 0.5em;
 		}
 	}
 }

@@ -50,7 +50,10 @@ export default {
 			group: this.$refs.optionGroup.offsetWidth
 		};
 		this.overruleGroupType = this.checkWidth(elements.parent, elements.group);
-		if (this.$props.group == 'inline' || this.$props.group == 'inline-space') {
+		if (
+			this.$props.group === 'inline' ||
+			this.$props.group === 'inline-space'
+		) {
 			window.addEventListener('resize', () => {
 				this.overruleGroupType = false;
 				setTimeout(() => {

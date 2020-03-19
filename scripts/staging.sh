@@ -4,7 +4,7 @@ cp ./config/staging.js ./config/latest.js
 # node env
 export NODE_ENV=production 
 
-nuxt build
+nuxt-ts build
 
 rm -rf dist
 mkdir dist

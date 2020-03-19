@@ -30,12 +30,12 @@ export default {
 	.input-field {
 		&__input {
 			border: 2px solid currentColor;
-			padding: 1em;
-			line-height: 1.5;
 			border-radius: $base-border-radius;
 			background-color: transparent;
 			color: currentColor;
 			font-size: 1em;
+			line-height: 1.5;
+			padding: 1em;
 			& + .input-field__label {
 				margin-bottom: 1em;
 			}
@@ -43,8 +43,8 @@ export default {
 				outline: none;
 			}
 			&::placeholder {
-				font-style: italic;
 				color: currentColor;
+				font-style: italic;
 				opacity: 0.5;
 			}
 			&:placeholder-shown {

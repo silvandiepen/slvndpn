@@ -9,6 +9,16 @@
 		</div>
 	</Container>
 </template>
+<script lang="ts">
+import Vue from 'vue';
+import { Container } from '@/components';
+export default Vue.extend({
+	name: 'Content',
+	components: {
+		Container
+	}
+});
+</script>
 
 <style lang="scss">
 @import '~tools';

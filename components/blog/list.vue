@@ -2,7 +2,7 @@
 	<PageContent class="background--black article-list">
 		<ul v-if="articleList" class="article-list__list">
 			<li
-				v-for="(article, idx) in articleList"
+				v-for="(article, idx) in articleFiles"
 				:key="idx"
 				class="article-list__item"
 			>
@@ -17,6 +17,23 @@
 				</NuxtLink> -->
 			</li>
 		</ul>
+		<!-- <ul v-if="articleList" class="article-list__list">
+			<li
+				v-for="(article, idx) in articleList"
+				:key="idx"
+				class="article-list__item"
+			>
+				{{ article }}
+				<span v-if="article.date_obj" class="article-list__date">
+					{{ article.date_obj.y }}.{{ addZeros(article.date_obj.m) }}.{{
+						addZeros(article.date_obj.d)
+					}}
+				</span>
+				<NuxtLink :to="`/blog/${article.uri}`" class="article-list__link">
+					<span class="article-list__text">{{ article.title }}</span>
+				</NuxtLink>
+			</li>
+		</ul> -->
 	</PageContent>
 </template>
 <script>
@@ -24,6 +41,9 @@ export default {
 	computed: {
 		articleList() {
 			return this.$store.getters['articles/articleList'];
+		},
+		articleFiles() {
+			return this.$store.articles.state.files;
 		}
 	},
 	created() {
@@ -57,14 +77,14 @@ export default {
 		text-decoration: none;
 	}
 	&__text {
-		line-height: 1.25rem;
 		font-size: 1.25rem;
+		line-height: 1.25rem;
 	}
 	&__date {
+		font-variant-numeric: tabular-nums;
 		line-height: 1.25rem;
 		opacity: 0.5;
 		padding: 1rem;
-		font-variant-numeric: tabular-nums;
 	}
 }
 </style>

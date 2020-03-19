@@ -10,4 +10,4 @@ export NODE_ENV=development
 # run the nuxt project on the following host
 export HOST=0.0.0.0 
 
-nuxt
+nuxt-ts

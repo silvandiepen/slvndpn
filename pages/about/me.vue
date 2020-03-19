@@ -1,9 +1,9 @@
 <template>
 	<main class="page page--me">
-		<PageHeading>
+		<Heading class="background--orange">
 			<h1>My name is Sil van Diepen</h1>
-		</PageHeading>
-		<PageContent class="background--skyblue">
+		</Heading>
+		<Content>
 			<h2>
 				I create visual things using code and illustrations.
 			</h2>
@@ -14,8 +14,8 @@
 				GitHub, Codepen, Dribbble and Behance. Are you interested? Just contact
 				me 🙂
 			</h4>
-		</PageContent>
-		<PageContent class="background--skybluelight">
+		</Content>
+		<Content class="background--icelight">
 			<h3>More about me…</h3>
 			<p>
 				I was born in a small village called Limmen the Netherlands, but grew up
@@ -29,17 +29,18 @@
 				work on projects for bigger clients. I Currently live in Alkmaar with my
 				wife Yeva and son Tig. We love to travel and enjoy life.
 			</p>
-		</PageContent>
+		</Content>
 	</main>
 </template>
 
-<script>
-export default {
-	created() {
-		console.log('hoiii');
-	},
-	mounted() {
-		this.$store.dispatch('ui/setDarkMode');
+<script lang="ts">
+import Vue from 'vue';
+import { Content, Heading } from '@/components';
+
+export default Vue.extend({
+	components: {
+		Content,
+		Heading
 	}
-};
+});
 </script>

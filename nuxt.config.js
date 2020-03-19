@@ -1,16 +1,34 @@
-import pkg from './package';
 import config from './config/latest';
-// import Github from './helpers/github.js';
 
 if (config.env === 'development') {
 	process.env.DEBUG = 'nuxt:*';
 }
-console.log(process.env);
 
-module.exports = {
+export default {
 	mode: 'universal',
+	/*
+	 ** Environments
+	 */
+
 	env: {
 		environment: config.env || 'production'
+	},
+
+	/*
+	 ** Headers of the page
+	 */
+	head: {
+		title: 'Sil van Diepen',
+		meta: [
+			{ charset: 'utf-8' },
+			{ name: 'viewport', content: 'width=device-width, initial-scale=1' },
+			{
+				hid: 'description',
+				name: 'description',
+				content: process.env.npm_package_descriptions || ''
+			}
+		],
+		link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
 	},
 
 	/*
@@ -22,38 +40,37 @@ module.exports = {
 		linkActiveClass: 'active'
 	},
 	/*
-	 ** Headers of the page
-	 */
-	head: {
-		title: 'Sil van Diepen',
-		meta: [
-			{ charset: 'utf-8' },
-			{ name: 'viewport', content: 'width=device-width, initial-scale=1' },
-			{ hid: 'description', name: 'description', content: pkg.description }
-		],
-		link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
-	},
-
-	/*
-	 ** Customize the progress bar color
+	 ** Customize the progress-bar color
 	 */
 	loading: {
-		color: '#000000' //,
-		// failedColor: '#000000'
+		color: '#000000'
 	},
-
+	/*
+	 ** Axios
+	 */
+	axios: {
+		retry: {
+			retries: 3
+		},
+		baseURL: config.api
+	},
+	/*
+	 ** Global CSS
+	 */
+	css: [
+		{
+			src: '~assets/scss/app.scss',
+			lang: 'scss'
+		}
+	],
 	/*
 	 ** Plugins to load before mounting the App
 	 */
-	plugins: [
-		{
-			src: '~/plugins/global.components.js'
-		},
-		{
-			src: '~/plugins/global.mixins.js'
-		},
-		{ src: '~/plugins/vuex-persist', ssr: false }
-	],
+	plugins: [],
+	/*
+	 ** Nuxt.js dev-modules
+	 */
+	buildModules: ['@nuxt/typescript-build', '@nuxtjs/stylelint-module'],
 
 	/*
 	 ** Nuxt.js modules
@@ -77,25 +94,6 @@ module.exports = {
 		'@nuxtjs/axios',
 		'@nuxtjs/pwa'
 	],
-
-	/*
-	 ** GoogleAnalytics module configuration
-	 */
-	// 	'google-analytics': {
-	// 		id: 'UA-XXXXXXXXX-XX',
-	// 		disabled: false
-	// 	},
-
-	/*
-	 ** Axios module configuration
-	 */
-	axios: {
-		retry: {
-			retries: 3
-		},
-		baseURL: config.api
-	},
-
 	/*
 	 ** Build configuration
 	 */
@@ -128,15 +126,5 @@ module.exports = {
 				});
 			}
 		}
-	},
-
-	/*
-	 ** Global CSS
-	 */
-	css: [
-		{
-			src: '~assets/scss/app.scss',
-			lang: 'scss'
-		}
-	]
+	}
 };

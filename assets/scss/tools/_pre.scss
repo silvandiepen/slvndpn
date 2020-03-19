@@ -6,6 +6,9 @@
 // Add custom project colors
 @import '~assets/scss/color/index';
 
+// Custom Mixins
+@import 'mixins';
+
 // Define settings particular to project
 
 // Define font variables
@@ -16,6 +19,7 @@ $base-border-radius: 0.5em;
 $base-transition-time: 0.3;
 $base-transition: #{$base-transition-time}s;
 $base-cubic-bezier: ease-in-out;
+$base-bounce-bezier: cubic-bezier(0.15, 0.65, 0.75, 1.5);
 
 // Mobile variables
 $mobile-padding: 2rem;

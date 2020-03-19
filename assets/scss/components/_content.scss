@@ -5,31 +5,31 @@
 @import url('https://fonts.googleapis.com/css?family=IBM+Plex+Mono&display=swap');
 
 .content code {
-	font-family: 'IBM Plex Mono', monospace;
-	padding: 0.5rem;
-	line-height: 1.5;
+	background-color: color(_White);
 	color: color(_Black);
 	font-size: 0.8em;
-	background-color: color(_White);
+	font-family: 'IBM Plex Mono', monospace;
+	line-height: 1.5;
+	padding: 0.5rem;
 }
 .content pre code {
 	display: block;
-	padding: 1rem;
 	width: calc(100% + 2rem);
-	margin-left: -1rem;
-	font-size: 1rem;
-	color: color(_White);
 
 	background-color: color(_Black);
+	color: color(_White);
+	font-size: 1rem;
+	padding: 1rem;
+	margin-left: -1rem;
 }
 
 .content hr {
-	margin: 1em 0;
-	padding: 0;
 	height: 2px;
+	border: none;
 	background-color: currentColor;
 	color: currentColor;
-	border: none;
+	margin: 1em 0;
+	padding: 0;
 }
 .content-row {
 	width: calc(100% + #{grid(1)});
@@ -41,9 +41,9 @@
 			opacity: 0.7;
 		}
 		h2 {
-			background-color: color(Red);
-			border: 2px solid red;
 			display: inline-block;
+			border: 2px solid red;
+			background-color: color(Red);
 			padding: 0 0.25em;
 		}
 	}

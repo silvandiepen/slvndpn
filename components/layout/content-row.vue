@@ -1,5 +1,24 @@
 <template>
-	<div class="row content-row">
+	<div class="content-row">
 		<slot></slot>
 	</div>
 </template>
+
+<script lang="ts">
+import Vue from 'vue';
+export default Vue.extend({
+	name: 'Row'
+});
+</script>
+
+<style lang="scss">
+.content-row {
+	display: flex;
+	flex-wrap: wrap;
+	.content-item {
+		width: 50%;
+		min-width: 25%;
+		padding: 2em;
+	}
+}
+</style>

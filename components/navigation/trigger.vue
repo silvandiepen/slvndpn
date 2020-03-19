@@ -27,18 +27,18 @@ export default {
 @import '~tools';
 .navigation-trigger {
 	position: relative;
+	z-index: 2;
 	display: block;
+	flex-shrink: 0;
+	border: none;
+	background: transparent;
 	font-size: 1.5rem;
 	line-height: 1.5rem;
-	padding: 1rem 1.75rem;
-	z-index: 2;
-	background: transparent;
-	border: none;
-	flex-shrink: 0;
 	transform: scale(1);
+	padding: 1rem 1.75rem;
 	&:focus {
-		outline: none;
 		border-radius: 50%;
+		outline: none;
 		color: color(Blue);
 	}
 	span {
@@ -49,7 +49,7 @@ export default {
 			@include menu-close();
 		}
 	}
-	@media #{$large-up} {
+	@media #{$medium-up} {
 		transform: scale(0);
 	}
 }

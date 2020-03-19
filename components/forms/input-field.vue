@@ -52,12 +52,12 @@ export default {
 		}
 	}
 	&__group-label {
-		width: 100%;
 		display: block;
-		text-transform: uppercase;
+		width: 100%;
+		font-weight: bold;
 		font-size: 12px;
 		letter-spacing: 1.5px;
-		font-weight: bold;
+		text-transform: uppercase;
 		opacity: 0.5;
 		& + .input-field__group {
 			margin-top: 1em;

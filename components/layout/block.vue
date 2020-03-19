@@ -6,6 +6,14 @@
 	</Container>
 </template>
 
+<script lang="ts">
+import Vue from 'vue';
+export default Vue.extend({
+	name: 'Block',
+	methods: {}
+});
+</script>
+
 <style lang="scss">
 @import '~tools';
 .page-block {

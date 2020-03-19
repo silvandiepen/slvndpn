@@ -17,8 +17,8 @@ $output: set-output(css, true);
 
 body,
 html {
-	font-family: 'Inter', sans-serif;
 	background-color: color(_Black);
+	font-family: 'Barlow', sans-serif;
 	main {
 		background-color: color(_White);
 	}
