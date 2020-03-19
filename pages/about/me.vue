@@ -1,9 +1,6 @@
 <template>
 	<main class="page page--me">
-		<Heading class="background--orange">
-			<h1>My name is Sil van Diepen</h1>
-		</Heading>
-		<Content>
+		<Heading class="background--orange" title="My name is Sil van Diepen">
 			<h2>
 				I create visual things using code and illustrations.
 			</h2>
@@ -14,7 +11,7 @@
 				GitHub, Codepen, Dribbble and Behance. Are you interested? Just contact
 				me 🙂
 			</h4>
-		</Content>
+		</Heading>
 		<Content class="background--icelight">
 			<h3>More about me…</h3>
 			<p>

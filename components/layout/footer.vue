@@ -50,7 +50,7 @@ export default Vue.extend({
 					},
 					{
 						name: 'What I use',
-						link: '/about/uses'
+						link: '/uses'
 					},
 					{
 						name: 'This website',
@@ -85,27 +85,27 @@ export default Vue.extend({
 				children: [
 					{
 						name: 'Guyn',
-						link: 'project/silicons'
+						link: '/project/guyn'
 					},
 					{
 						name: "Henri's",
-						link: 'project/henris'
+						link: '/project/henris'
 					},
 					{
 						name: 'Silicons',
-						link: 'project/silicons'
+						link: '/project/silicons'
 					},
 					{
 						name: 'Passport',
-						link: 'project/passport'
+						link: '/project/passport'
 					},
 					{
 						name: 'CSS Order',
-						link: 'project/css-order'
+						link: '/project/css-order'
 					},
 					{
 						name: 'Aybu',
-						link: 'project/aybu'
+						link: '/project/aybu'
 					}
 				]
 			},
@@ -114,27 +114,35 @@ export default Vue.extend({
 				children: [
 					{
 						name: 'Guyn',
-						link: 'project/guyn'
+						link: '/project/guyn'
 					},
 					{
 						name: 'BBB',
-						link: 'work/bbb'
+						link: '/work/bbb'
 					},
 					{
 						name: 'Melbourne',
-						link: 'work/melbourne'
+						link: '/work/melbourne'
+					},
+					{
+						name: 'Toun',
+						link: '/work/toun'
 					},
 					{
 						name: 'Shampour',
-						link: 'work/shampour'
+						link: '/work/shampour'
+					},
+					{
+						name: 'Gelderse Streken',
+						link: '/work/gelderse-streken'
 					},
 					{
 						name: 'Other icons',
-						link: 'work/icons'
+						link: '/work/icons'
 					},
 					{
 						name: "Logo's",
-						link: 'work/logos'
+						link: '/work/logos'
 					}
 				]
 			},

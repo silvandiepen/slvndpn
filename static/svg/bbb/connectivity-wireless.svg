@@ -64,11 +64,12 @@
 	.st56{fill:#FFFFFF;stroke:#000000;stroke-miterlimit:10;}
 	.st57{fill:#FFFFFF;stroke:#000000;stroke-width:0.5;stroke-linecap:round;stroke-miterlimit:10;}
 </style>
-<polygon class="st50" points="57,57 87,57 72,84 "/>
-<polygon class="st50" points="72,84 42,84 57,57 "/>
-<line class="st50" x1="51" y1="51" x2="62.1" y2="51"/>
-<path class="st50" d="M87,51h9.2c3.1,0,5.5,2.5,5.5,5.5c0,3.1-2.5,5.5-5.5,5.5"/>
-<path class="st50" d="M87,57c0,0,3.5,15.5,14.5,26.5"/>
-<circle class="st25" cx="102" cy="84" r="18"/>
-<circle class="st25" cx="42" cy="84" r="18"/>
+<path class="st6" d="M48,120v-12.2c0-3.2,2.6-5.8,5.8-5.8h36.3c3.2,0,5.8,2.6,5.8,5.8V120"/>
+<path class="st6" d="M96,24v12.2c0,3.2-2.6,5.8-5.8,5.8H53.8c-3.2,0-5.8-2.6-5.8-5.8V24"/>
+<path class="st6" d="M89.7,59.9c-9.9,9.9-25.9,9.9-35.8,0"/>
+<path class="st6" d="M78.9,49.2c-4,4-10.4,4-14.3,0"/>
+<path class="st6" d="M84.3,54.5c-6.9,6.9-18.1,6.9-25.1,0"/>
+<path class="st6" d="M53.9,85.3c9.9-9.9,25.9-9.9,35.8,0"/>
+<path class="st6" d="M64.6,96c4-4,10.4-4,14.3,0"/>
+<path class="st6" d="M59.3,90.6c6.9-6.9,18.1-6.9,25.1,0"/>
 </svg>

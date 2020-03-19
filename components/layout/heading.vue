@@ -3,12 +3,12 @@
 		<div class="row center">
 			<div class="column small-full medium-two-third">
 				<div class="content">
-					<slot></slot>
 					<h1 v-if="title">
 						<span v-for="(word, idx) in compiledTitle" :key="idx">
 							{{ word }}
 						</span>
 					</h1>
+					<slot></slot>
 				</div>
 			</div>
 		</div>
@@ -17,6 +17,7 @@
 <script lang="ts">
 import Vue from 'vue';
 import { Container } from '@/components';
+type title = {};
 export default Vue.extend({
 	name: 'Heading',
 	components: {
@@ -29,7 +30,7 @@ export default Vue.extend({
 		}
 	},
 	computed: {
-		compiledTitle() {
+		compiledTitle(): title[] {
 			if (this.$props.title) return this.$props.title.split(' ');
 			else {
 				return [];

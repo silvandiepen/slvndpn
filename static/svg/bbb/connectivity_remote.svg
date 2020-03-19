@@ -64,11 +64,14 @@
 	.st56{fill:#FFFFFF;stroke:#000000;stroke-miterlimit:10;}
 	.st57{fill:#FFFFFF;stroke:#000000;stroke-width:0.5;stroke-linecap:round;stroke-miterlimit:10;}
 </style>
-<polygon class="st50" points="57,57 87,57 72,84 "/>
-<polygon class="st50" points="72,84 42,84 57,57 "/>
-<line class="st50" x1="51" y1="51" x2="62.1" y2="51"/>
-<path class="st50" d="M87,51h9.2c3.1,0,5.5,2.5,5.5,5.5c0,3.1-2.5,5.5-5.5,5.5"/>
-<path class="st50" d="M87,57c0,0,3.5,15.5,14.5,26.5"/>
-<circle class="st25" cx="102" cy="84" r="18"/>
-<circle class="st25" cx="42" cy="84" r="18"/>
+<path class="st6" d="M50.6,33.1c11.7-11.7,30.7-11.7,42.4,0"/>
+<path class="st6" d="M48,120V63c0-3.2,2.6-5.8,5.8-5.8h36.3c3.2,0,5.8,2.6,5.8,5.8v57"/>
+<path class="st6" d="M63.3,45.8c4.7-4.7,12.3-4.7,17,0"/>
+<path class="st6" d="M56.9,39.5c8.2-8.2,21.5-8.2,29.7,0"/>
+<circle class="st7" cx="64.5" cy="73.5" r="4.5"/>
+<circle class="st7" cx="79.5" cy="73.5" r="4.5"/>
+<circle class="st7" cx="64.5" cy="88.5" r="4.5"/>
+<circle class="st7" cx="79.5" cy="88.5" r="4.5"/>
+<circle class="st7" cx="64.5" cy="103.5" r="4.5"/>
+<circle class="st7" cx="79.5" cy="103.5" r="4.5"/>
 </svg>

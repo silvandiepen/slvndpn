@@ -48,3 +48,25 @@
 		}
 	}
 }
+
+ol:not([class]) {
+	counter-reset: list;
+	li {
+		position: relative;
+		counter-increment: list;
+		padding-left: 1em;
+		&::before {
+			content: counter(list) '.';
+			position: absolute;
+			left: 0;
+			display: inline-block;
+			min-width: 1em;
+		}
+	}
+}
+.large-link {
+	display: block;
+	width: 100%;
+	font-size: 2em;
+	text-align: center;
+}
