@@ -12,6 +12,7 @@ export default Vue.extend({
 </script>
 
 <style lang="scss">
+@import '~tools';
 .content-row {
 	display: flex;
 	flex-wrap: wrap;
