@@ -51,7 +51,8 @@ export default Vue.extend({
 		margin: 0;
 	}
 	@media #{$small-only} {
-		height: 50vh;
+		min-height: 50vh;
+		padding-top: 3em;
 	}
 	h1 {
 		position: relative;

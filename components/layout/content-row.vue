@@ -18,7 +18,11 @@ export default Vue.extend({
 	flex-wrap: wrap;
 	.content-item {
 		width: 100%;
-		padding: 1em;
+		@media #{$small-only} {
+			& + .content-item {
+				margin-top: 1em;
+			}
+		}
 		@media #{$medium-up} {
 			width: 50%;
 			min-width: 25%;
