@@ -16,9 +16,13 @@ export default Vue.extend({
 	display: flex;
 	flex-wrap: wrap;
 	.content-item {
-		width: 50%;
-		min-width: 25%;
-		padding: 2em;
+		width: 100%;
+		padding: 1em;
+		@media #{$medium-up} {
+			width: 50%;
+			min-width: 25%;
+			padding: 2em;
+		}
 	}
 }
 </style>

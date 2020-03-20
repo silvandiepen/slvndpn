@@ -45,7 +45,8 @@ export default Vue.extend({
 .page-heading {
 	display: flex;
 	align-items: center;
-	height: 66.66vh;
+	min-height: 66.66vh;
+
 	> .row {
 		margin: 0;
 	}
