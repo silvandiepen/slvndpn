@@ -24,6 +24,9 @@ export default Vue.extend({
 @import '~tools';
 .page {
 	&--home {
+		.page-content {
+			padding-top: 6em;
+		}
 	}
 }
 </style>

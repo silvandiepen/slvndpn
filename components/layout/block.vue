@@ -18,5 +18,8 @@ export default Vue.extend({
 @import '~tools';
 .page-block {
 	padding: grid(1);
+	@media #{$small-only} {
+		padding: 0;
+	}
 }
 </style>
