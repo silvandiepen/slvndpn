@@ -19,6 +19,7 @@ export default Vue.extend({
 	.content-item {
 		width: 100%;
 		@media #{$small-only} {
+			padding: 1em;
 			& + .content-item {
 				margin-top: 1em;
 			}
