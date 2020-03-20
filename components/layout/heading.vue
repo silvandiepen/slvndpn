@@ -59,6 +59,7 @@ export default Vue.extend({
 		z-index: 1;
 		display: flex;
 		flex-wrap: wrap;
+		transform: translateY(calc(var(--scroll-top-px) * -0.25));
 		span {
 			position: relative;
 			display: block;

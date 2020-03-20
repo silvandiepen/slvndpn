@@ -2,47 +2,22 @@
 	<header id="header" class="header" :style="headerStyle">
 		<h3 class="header__logo">
 			<NuxtLink to="/">
-				Sil
+				<span class="header__firstname">
+					<span>S</span><span>i</span><span>l</span>
+				</span>
+				<Logo class="header__logo-icon"></Logo>
 			</NuxtLink>
-			<span>van Diepen</span>
+			<span class="header__lastname">van Diepen</span>
 		</h3>
 	</header>
 </template>
 
 <script lang="ts">
 import Vue from 'vue';
+import { Logo } from '@/components';
 export default Vue.extend({
 	name: 'Header',
-	components: {},
-	data: () => ({
-		projectName: 'Sil',
-		scroll: {
-			position: 0,
-			last: 0,
-			tick: false
-		}
-	}),
-	computed: {
-		headerStyle() {
-			return {
-				'--scroll-top': `${this.scroll.position}px`
-			};
-		}
-	},
-	mounted() {
-		window.addEventListener('scroll', () => {
-			this.scroll.last = window.scrollY;
-
-			if (!this.scroll.tick) {
-				window.requestAnimationFrame(() => {
-					this.scroll.position = this.scroll.last;
-					this.scroll.tick = false;
-				});
-				this.scroll.tick = true;
-			}
-		});
-	},
-	methods: {}
+	components: { Logo }
 });
 </script>
 
@@ -60,29 +35,52 @@ export default Vue.extend({
 	text-align: center;
 	padding: grid(1 2);
 	@include min-(1, $mobile-padding) {
-		padding: 0 0 0 $mobile-padding;
+		padding: $mobile-padding;
 	}
 	&__logo {
+		position: relative;
 		z-index: 2;
 		display: flex;
-		span,
 		a {
 			display: block;
 			width: 3rem;
 			height: 3rem;
-			background-color: white;
+			border-radius: calc(var(--scroll-top-px) / 10);
+			background-color: hsl(
+				0deg,
+				0%,
+				calc((var(--scroll-top-max-reverse) / 10) * 1%)
+			);
 			font-size: 1.5rem;
 			line-height: 3rem;
 			text-decoration: none;
 		}
-		span {
-			position: fixed;
-			width: auto;
-			background-color: black;
-			color: white;
-			transform: translateX(3rem) translateY(calc(var(--scroll-top) * -1 / 4));
-			padding: 0 0.5em;
-		}
+	}
+	&__logo-icon {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 3rem;
+		height: 3rem;
+		transform: scale(calc((var(--scroll-top-max) / 1000) * 0.8));
+		fill: white;
+	}
+	&__firstname {
+		display: block;
+		transform: scale(calc(var(--scroll-top-max-reverse) / 1000));
+	}
+	&__lastname {
+		position: fixed;
+		display: block;
+		width: auto;
+		height: 3rem;
+		background-color: black;
+		color: white;
+		font-size: 1.5rem;
+		line-height: 3rem;
+		text-decoration: none;
+		transform: translateX(3rem) translateY(calc(var(--scroll-top-px) * -1 / 4));
+		padding: 0 0.5em;
 	}
 }
 main {

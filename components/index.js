@@ -23,3 +23,4 @@ export { default as Menu } from './navigation/menu.vue';
 export { default as Trigger } from './navigation/trigger.vue';
 
 export { default as TheButton } from './the-button.vue';
+export { default as Logo } from './logo.vue';
