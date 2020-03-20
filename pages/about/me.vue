@@ -27,6 +27,12 @@
 				wife Yeva and son Tig. We love to travel and enjoy life.
 			</p>
 		</Content>
+		<Content class="content-with-photo">
+			<h3>And this is me…</h3>
+			<img
+				src="https://s3-eu-central-1.amazonaws.com/api.silvandiepen.nl/wp-content/uploads/2020/03/20105423/me.png"
+			/>
+		</Content>
 	</main>
 </template>
 
@@ -41,3 +47,24 @@ export default Vue.extend({
 	}
 });
 </script>
+
+<style lang="scss">
+.content-with-photo {
+	min-height: 50vh;
+	clip-path: inset(0 0 0 0);
+	&,
+	.content {
+		padding-bottom: 0;
+	}
+	img {
+		position: fixed;
+		top: 0;
+
+		left: 50%;
+		height: 100vh;
+		transform: translateX(-50%)
+			translateY(calc(var(--scroll-top-max-reverse) * 1px));
+		margin: 0;
+	}
+}
+</style>
