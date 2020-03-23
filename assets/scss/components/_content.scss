@@ -69,4 +69,7 @@ ol:not([class]) {
 	width: 100%;
 	font-size: 2em;
 	text-align: center;
+	@media #{$small-only} {
+		font-size: 1.5em;
+	}
 }
