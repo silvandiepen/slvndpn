@@ -1,5 +1,5 @@
 <template>
-	<header id="header" class="header" :style="headerStyle">
+	<header id="header" class="header">
 		<h3 class="header__logo">
 			<NuxtLink to="/">
 				<span class="header__firstname">
@@ -62,7 +62,7 @@ export default Vue.extend({
 		left: 0;
 		width: 3rem;
 		height: 3rem;
-		transform: scale(calc((var(--scroll-top-max) / 1000) * 0.8));
+		transform: scale(calc((var(--scroll-top-max) / 1000) * 0.66));
 		fill: white;
 	}
 	&__firstname {

@@ -62,8 +62,8 @@ export default Vue.extend({
 
 		left: 50%;
 		height: 100vh;
-		transform: translateX(-50%)
-			translateY(calc(var(--scroll-top-max-reverse) * 1px));
+		transform: translateX(-50%);
+		// 	translateY(calc(var(--scroll-top-max-reverse) * 1px));
 		margin: 0;
 	}
 }
