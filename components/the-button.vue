@@ -27,7 +27,7 @@ export default Vue.extend({
 		buttonColor: 'default'
 	}),
 	beforeCreate() {
-		const isLink = new RegExp('^(http://|https://|tel:|mailto:)');
+		const isLink = new RegExp('^(https://|https://|tel:|mailto:)');
 		// Determine type of link
 		if (this.$props && this.$props.link && this.$props.link.match(isLink))
 			this.buttonType = 'a';

@@ -3,19 +3,19 @@
 		<Heading title="Winter"> </Heading>
 		<Content class="background--icelight">
 			<img
-				src="http://api.silvandiepen.nl/wp-content/uploads/2019/09/Macaca.png"
+				src="https://api.silvandiepen.nl/wp-content/uploads/2019/09/Macaca.png"
 			/>
 			<img
-				src="http://api.silvandiepen.nl/wp-content/uploads/2019/09/lion2.jpg"
+				src="https://api.silvandiepen.nl/wp-content/uploads/2019/09/lion2.jpg"
 			/>
 			<img
-				src="http://api.silvandiepen.nl/wp-content/uploads/2019/09/lion1.jpg"
+				src="https://api.silvandiepen.nl/wp-content/uploads/2019/09/lion1.jpg"
 			/>
 			<img
-				src="http://api.silvandiepen.nl/wp-content/uploads/2019/09/hawk.jpg"
+				src="https://api.silvandiepen.nl/wp-content/uploads/2019/09/hawk.jpg"
 			/>
 			<img
-				src="http://api.silvandiepen.nl/wp-content/uploads/2019/09/blackwolf.jpg"
+				src="https://api.silvandiepen.nl/wp-content/uploads/2019/09/blackwolf.jpg"
 			/>
 		</Content>
 	</main>
