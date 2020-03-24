@@ -271,8 +271,15 @@ export default Vue.extend({
 		}
 	}
 	.column {
-		&:nth-child(n + 6) {
-			margin-top: 4em;
+		@media #{$small-only} {
+			&:nth-child(n + 3) {
+				margin-top: 4em;
+			}
+		}
+		@media #{$medium-up} {
+			&:nth-child(n + 6) {
+				margin-top: 4em;
+			}
 		}
 	}
 }
