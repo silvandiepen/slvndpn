@@ -24,5 +24,19 @@ export default Vue.extend({
 @import '~tools';
 .page-content {
 	padding: grid(2 0);
+	img {
+		max-width: 100%;
+		& + img {
+			margin-top: grid(1);
+		}
+		&.full-width {
+			position: relative;
+			left: 50%;
+			display: block;
+			width: 100vw;
+			max-width: 100vw;
+			transform: translateX(-50%);
+		}
+	}
 }
 </style>

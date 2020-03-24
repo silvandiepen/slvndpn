@@ -3,7 +3,7 @@
 		<div class="row center small-full xlarge-three-quarter">
 			<div class="column">
 				<nav class="nav">
-					<div class="row small-half medium-sixth">
+					<div class="row small-half medium-fifth">
 						<div v-for="(group, idg) in navigation" :key="idg" class="column">
 							<h6 v-if="group.link">
 								<NuxtLink :to="group.link">{{ group.title }}</NuxtLink>
@@ -16,14 +16,13 @@
 									class="nav__item"
 								>
 									<NuxtLink v-if="item.link" class="nav__link" :to="item.link">
-										{{ item.name }}
+										<span class="nav__text">{{ item.name }}</span>
 									</NuxtLink>
 									<a
 										v-if="item.url"
 										class="nav__link nav__link--external"
 										:href="item.link"
-									>
-										{{ item.name }}
+										><span class="nav__text">{{ item.name }}</span>
 									</a>
 								</li>
 							</ul>
@@ -55,6 +54,10 @@ export default Vue.extend({
 					{
 						name: 'This website',
 						link: '/about/this'
+					},
+					{
+						name: 'Get in touch!',
+						link: '/about/contact'
 					}
 				]
 			},
@@ -110,7 +113,43 @@ export default Vue.extend({
 				]
 			},
 			{
-				title: 'Icons & Typo',
+				title: 'Illustration',
+				children: [
+					{
+						name: 'Tiggy & Fred',
+						link: '/cartoon/tiggy'
+					},
+					{
+						name: 'Miles Brothers',
+						link: '/cartoon/milesbrothers'
+					}
+				]
+			},
+			{
+				title: 'Branding',
+				children: [
+					{
+						name: "Logo's",
+						link: '/logos'
+					}
+				]
+			},
+
+			{
+				title: 'Typography',
+				children: [
+					{
+						name: 'Vagrik',
+						link: '/typography/vagrik'
+					},
+					{
+						name: 'Fifty',
+						link: '/typography/fifty'
+					}
+				]
+			},
+			{
+				title: 'Iconography',
 				children: [
 					{
 						name: 'Guyn',
@@ -121,8 +160,8 @@ export default Vue.extend({
 						link: '/work/bbb'
 					},
 					{
-						name: 'Melbourne',
-						link: '/work/melbourne'
+						name: 'Australia',
+						link: '/work/australia'
 					},
 					{
 						name: 'Toun',
@@ -135,14 +174,6 @@ export default Vue.extend({
 					{
 						name: 'Gelderse Streken',
 						link: '/work/gelderse-streken'
-					},
-					{
-						name: 'Other icons',
-						link: '/work/icons'
-					},
-					{
-						name: "Logo's",
-						link: '/work/logos'
 					}
 				]
 			},
@@ -181,6 +212,10 @@ export default Vue.extend({
 					{
 						name: 'Winter',
 						link: '/photography/winter'
+					},
+					{
+						name: 'Prisoned Zoo',
+						link: '/photography/prison-zoo'
 					}
 				]
 			},
@@ -235,6 +270,11 @@ export default Vue.extend({
 			text-decoration: none;
 		}
 	}
+	.column {
+		&:nth-child(n + 6) {
+			margin-top: 4em;
+		}
+	}
 }
 .nav {
 	&__list {
@@ -244,12 +284,22 @@ export default Vue.extend({
 	&__item {
 		// border: 1px solid red;
 	}
+	&__text {
+		&::before {
+			content: '';
+			display: block;
+			width: 1em;
+			height: 2px;
+			opacity: 0.5;
+		}
+	}
 	&__link {
 		position: relative;
 		display: inline-block;
 		padding: 0.5em 0;
 		text-decoration: none;
-		transition: color $base-transition $base-cubic-bezier;
+		transition: color $base-transition $base-cubic-bezier,
+			padding $base-transition $base-cubic-bezier;
 		&::before {
 			content: '';
 			position: absolute;
@@ -276,6 +326,9 @@ export default Vue.extend({
 				transform: translate(0.25em, -0.25em);
 				opacity: 1;
 			}
+		}
+		&:not(:hover).active--exact {
+			padding-left: 2em;
 		}
 
 		&--external {

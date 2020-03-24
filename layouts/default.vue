@@ -11,6 +11,7 @@ import LayoutHeader from '~/components/layout/header.vue';
 import LayoutFooter from '~/components/layout/footer.vue';
 
 export default {
+	transition: 'page',
 	components: {
 		LayoutHeader,
 		LayoutFooter
@@ -54,3 +55,16 @@ export default {
 	}
 };
 </script>
+<style lang="scss">
+@import '~tools';
+.page-enter-active,
+.page-leave-active {
+	transition-timing-function: $base-cubic-bezier;
+	transition-duration: #{($base-transition-time * 2)}s;
+	transition-property: opacity;
+}
+.page-enter,
+.page-leave-to {
+	opacity: 0;
+}
+</style>
