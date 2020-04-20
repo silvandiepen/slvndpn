@@ -7,6 +7,7 @@ export interface containerProps {
 }
 export interface elementProps {
 	top: number;
+	height: number;
 	bottom: number;
 }
 export interface currentProps {
