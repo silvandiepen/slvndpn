@@ -37,4 +37,4 @@
 
 <script lang="ts" src="./Footer.script.ts" />
 
-<style lang="scss" src="./footer.style.scss" />
+<style lang="scss" src="./Footer.style.scss" />
