@@ -46,3 +46,4 @@
 		</g>
 	</svg>
 </template>
+<script lang="ts" src="./Logo.script.ts" />

@@ -41,10 +41,10 @@
 					<h4>Find out more…</h4>
 
 					<p>More information about Henri’s and the docs.</p>
-					<TheButton href="https://www.henris.style/">Visit Henri's</TheButton>
+					<Button href="https://www.henris.style/">Visit Henri's</Button>
 				</div>
 			</div> -->
-				<TheButton href="https://www.henris.style/">Visit Henri's</TheButton>
+				<Button href="https://www.henris.style/">Visit Henri's</Button>
 			</Block>
 
 			<Block class="column background--purpledark">
@@ -57,7 +57,7 @@
 					So I created this overview of icons which we all have already. Easy to
 					copy or make your favorite list.
 				</p>
-				<TheButton icon="→" href="https://aybu.svd.im/">Visit Aybu</TheButton>
+				<Button icon="→" href="https://aybu.svd.im/">Visit Aybu</Button>
 			</Block>
 
 			<Block class="column background--magenta">
@@ -71,7 +71,7 @@
 					this website/tool/package just to have a colorset which can be used in
 					any situation. To have colors which fit and can be used easily.
 				</p>
-				<TheButton icon="→" href="https://guyn.nl/">Visit Guyn</TheButton>
+				<Button icon="→" href="https://guyn.nl/">Visit Guyn</Button>
 			</Block>
 
 			<Block class="column background--blue">
@@ -85,9 +85,9 @@
 					But I thought, why not just use css? So I created this icon set which
 					only uses CSS.
 				</p>
-				<TheButton icon="→" href="https://www.silicons.nl/">
+				<Button icon="→" href="https://www.silicons.nl/">
 					Visit Silicons
-				</TheButton>
+				</Button>
 			</Block>
 			<Block class="column background--plum">
 				<h2>Passport</h2>
@@ -99,9 +99,9 @@
 					and Canadian was stronger than my prefered combo. So I made a tool to
 					check this out :)
 				</p>
-				<TheButton icon="→" href="https://passport.svd.im">
+				<Button icon="→" href="https://passport.svd.im">
 					Visit Passport
-				</TheButton>
+				</Button>
 			</Block>
 			<Block class="column background--greendark">
 				<h2>Overlay</h2>
@@ -113,9 +113,9 @@
 					created a little tool to load a page in a certain size and put your
 					image over it as an overlay.
 				</p>
-				<TheButton icon="→" href="https://overlay.svd.im">
+				<Button icon="→" href="https://overlay.svd.im">
 					Visit Overlay
-				</TheButton>
+				</Button>
 			</Block>
 			<Block class="column background--turquoisedark">
 				<h2>Grid Tool</h2>
@@ -127,9 +127,9 @@
 					Thats why, there is Grid Tool. Just to check the grid, nothing more,
 					nothing less. Add the image and show the grid.
 				</p>
-				<TheButton icon="→" href="https://grid-tool.svd.im">
+				<Button icon="→" href="https://grid-tool.svd.im">
 					Visit Grid
-				</TheButton>
+				</Button>
 			</Block>
 			<Block class="column background--red">
 				<h2>CSS Order</h2>
@@ -140,22 +140,22 @@
 					Alphabetically isn't logical. So I created a "logical" order for CSS
 					and the set to enforce this using stylelint.
 				</p>
-				<TheButton icon="→" href="https://css-order.svd.im">
+				<Button icon="→" href="https://css-order.svd.im">
 					Visit CSS Order
-				</TheButton>
+				</Button>
 			</Block>
 		</div>
 	</main>
 </template>
 <script lang="ts">
 import Vue from 'vue';
-import { Block, Heading, TheButton } from '@/components';
+import { Block, Heading, Button } from '@/components';
 
 export default Vue.extend({
 	components: {
 		Block,
 		Heading,
-		TheButton
+		Button
 	}
 });
 </script>

@@ -128,8 +128,8 @@
 						class="button button--magentalight button--default"
 						><span class="button__text">
 							Sass
-						</span></a
-					>
+						</span>
+					</a>
 				</Item>
 
 				<Item title="Vue">
@@ -144,8 +144,8 @@
 						class="button button--magentalight button--default"
 						><span class="button__text">
 							VueJS
-						</span></a
-					>
+						</span>
+					</a>
 				</Item>
 				<Item title="NuxtJS"
 					><p>
@@ -164,8 +164,8 @@
 						class="button button--magentalight button--default"
 						><span class="button__text">
 							NuxtJS
-						</span></a
-					>
+						</span>
+					</a>
 				</Item>
 				<Item title="Henri’s">
 					<p>
@@ -179,8 +179,8 @@
 						class="button button--magentalight button--default"
 						><span class="button__text">
 							Henri's
-						</span></a
-					>
+						</span>
+					</a>
 				</Item>
 				<Item title="Guyn">
 					<p>
@@ -196,8 +196,8 @@
 						class="button button--magentalight button--default"
 						><span class="button__text">
 							Guyn
-						</span></a
-					>
+						</span>
+					</a>
 				</Item>
 			</Row>
 		</Content>
@@ -222,8 +222,8 @@
 					>
 						<span class="button__text">
 							Slack
-						</span></a
-					>
+						</span>
+					</a>
 				</Item>
 
 				<Item title="Sketch"
@@ -238,9 +238,10 @@
 						class="button button--magentalight button--default"
 						><span class="button__text">
 							Sketch App
-						</span></a
-					></Item
-				><Item title="Zeplin">
+						</span>
+					</a>
+				</Item>
+				<Item title="Zeplin">
 					<p>
 						The easiest way to just scroll through designs and while developing
 						things to measure and extract certain assets without having to open
@@ -252,9 +253,10 @@
 						class="button button--magentalight button--default"
 						><span class="button__text">
 							Zeplin
-						</span></a
-					></Item
-				><Item title="Adobe Illustrator"
+						</span>
+					</a>
+				</Item>
+				<Item title="Adobe Illustrator"
 					><p>
 						Ever since the day i finally knew how it worked, this is my go to
 						tool. I love Illustrator, even though Adobe is making it less and
@@ -266,9 +268,10 @@
 						class="button button--magentalight button--default"
 						><span class="button__text">
 							Illustrator
-						</span></a
-					></Item
-				><Item title="Adobe Photoshop"
+						</span>
+					</a>
+				</Item>
+				<Item title="Adobe Photoshop"
 					><p>
 						The amount of hours I spent in Photoshop I don’t even wanna think
 						about. It’s getting slower by the version while my computer is
@@ -281,9 +284,10 @@
 						class="button button--magentalight button--default"
 						><span class="button__text">
 							Photoshop
-						</span></a
-					></Item
-				><Item title="Sequel Pro"
+						</span>
+					</a>
+				</Item>
+				<Item title="Sequel Pro"
 					><p>
 						Mysql databases made easy. Before I was digging around in Phpmyadmin
 						but ever since Sequel Pro, I really can’t anymore.
@@ -294,9 +298,10 @@
 						class="button button--magentalight button--default"
 						><span class="button__text">
 							Sequel Pro
-						</span></a
-					></Item
-				><Item title="Tower"
+						</span>
+					</a>
+				</Item>
+				<Item title="Tower"
 					><p>
 						It’s not that I don’t know the git commands, its just sometimes
 						making it easier to see what’s actually happening and make sure I
@@ -308,9 +313,10 @@
 						class="button button--magentalight button--default"
 						><span class="button__text">
 							Tower
-						</span></a
-					></Item
-				><Item title="Postman"
+						</span>
+					</a>
+				</Item>
+				<Item title="Postman"
 					><p>
 						Checking all your api requests made visual. It just makes it easy.
 					</p>
@@ -320,9 +326,10 @@
 						class="button button--magentalight button--default"
 						><span class="button__text">
 							Postman
-						</span></a
-					></Item
-				><Item title="Vue Devtools"
+						</span>
+					</a>
+				</Item>
+				<Item title="Vue Devtools"
 					><p>
 						I don’t think I can ever develop Vue anymore without it. Love it!
 					</p>
@@ -332,9 +339,10 @@
 						class="button button--magentalight button--default"
 						><span class="button__text">
 							Vue Devtools on GitHub
-						</span></a
-					></Item
-				><Item title="Wordpress"
+						</span>
+					</a>
+				</Item>
+				<Item title="Wordpress"
 					><p>
 						Actually not a real fan, but it works. I like to simply host my CMS
 						myself instead of using services for this. I have built my own CMS’s
@@ -348,9 +356,10 @@
 						class="button button--magentalight button--default"
 						><span class="button__text">
 							Wordpress
-						</span></a
-					></Item
-				><Item title="Dropbox"
+						</span>
+					</a>
+				</Item>
+				<Item title="Dropbox"
 					><p>
 						I have tried working with Google Drive, but I really can’t. Dropbox
 						just works and easy.
@@ -361,9 +370,10 @@
 						class="button button--magentalight button--default"
 						><span class="button__text">
 							Dropbox
-						</span></a
-					></Item
-				><Item title="Stack"
+						</span>
+					</a>
+				</Item>
+				<Item title="Stack"
 					><p>
 						They gave me 1tb for free in the beginning. So yes, still using it!
 					</p>
@@ -373,9 +383,10 @@
 						class="button button--magentalight button--default"
 						><span class="button__text">
 							Stack
-						</span></a
-					></Item
-				><Item title="Itsycal"
+						</span>
+					</a>
+				</Item>
+				<Item title="Itsycal"
 					><p>
 						A little tool which lives in the top of my screen. Easy to navigate
 						through the calendar just to look up what day a certain date is. I
@@ -388,9 +399,9 @@
 						class="button button--magentalight button--default"
 						><span class="button__text">
 							ItsyCal
-						</span></a
-					></Item
-				>
+						</span>
+					</a>
+				</Item>
 			</Row>
 		</Content>
 		<Content class="background--red">
@@ -415,9 +426,10 @@
 						class="button button--magentalight button--default"
 						><span class="button__text">
 							Youtube Premium
-						</span></a
-					></Item
-				><Item title="Netflix">
+						</span>
+					</a>
+				</Item>
+				<Item title="Netflix">
 					<p>
 						A lack of Tv isn’t fully covered by Youtube, Netflix also really
 						helps! Although I am…really curious about what Disney is going to
@@ -429,9 +441,10 @@
 						class="button button--magentalight button--default"
 						><span class="button__text">
 							Netflix
-						</span></a
-					></Item
-				><Item title="Netlify"
+						</span>
+					</a>
+				</Item>
+				<Item title="Netlify"
 					><p>
 						The easiest way to deploy my static websites (including this one). I
 						truely love Netlify’s experience and want to do more and more with
@@ -443,9 +456,10 @@
 						class="button button--magentalight button--default"
 						><span class="button__text">
 							Netlify
-						</span></a
-					></Item
-				><Item title="Versio">
+						</span>
+					</a>
+				</Item>
+				<Item title="Versio">
 					<p>
 						Most of the domains I own I have registered by Versio, a dutch
 						company which is really cheap. Also websites, projects and apps
@@ -458,9 +472,10 @@
 						class="button button--magentalight button--default"
 						><span class="button__text">
 							Versio
-						</span></a
-					></Item
-				><Item title="NameCheap">
+						</span>
+					</a>
+				</Item>
+				<Item title="NameCheap">
 					<p>
 						Versio doesn’t do all extensions, for the rest Namecheap is usually
 						my go to.
@@ -471,9 +486,10 @@
 						class="button button--magentalight button--default"
 						><span class="button__text">
 							NameCheap
-						</span></a
-					></Item
-				><Item title="GitHub">
+						</span>
+					</a>
+				</Item>
+				<Item title="GitHub">
 					<p>
 						My daily versioning tool, I really like Github and its getting
 						better and better. A few months ago it got free for private
@@ -486,10 +502,10 @@
 						class="button button--magentalight button--default"
 						><span class="button__text">
 							GitHub
-						</span></a
-					></Item
-				></Row
-			>
+						</span>
+					</a>
+				</Item>
+			</Row>
 		</Content>
 	</main>
 </template>

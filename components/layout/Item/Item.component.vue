@@ -6,15 +6,19 @@
 		<p><slot></slot></p>
 	</div>
 </template>
+
 <script lang="ts">
-import Vue from 'vue';
-export default Vue.extend({
-	name: 'Item',
+import { defineComponent } from '@vue/composition-api';
+
+export default defineComponent({
 	props: {
-		title: {
-			type: String,
-			default: null
-		}
+		title: String
+	},
+	setup(props) {
+		return {
+			props
+		};
 	}
 });
 </script>
+<style lang="scss" src="./Item.style.scss" />

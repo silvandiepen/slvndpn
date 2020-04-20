@@ -1,9 +1,8 @@
-import config from './config/latest';
+import cfg from './config/latest';
 
-if (config.env === 'development') {
+if (cfg.env === 'development') {
 	process.env.DEBUG = 'nuxt:*';
 }
-
 export default {
 	mode: 'universal',
 	/*
@@ -11,7 +10,7 @@ export default {
 	 */
 
 	env: {
-		environment: config.env || 'production'
+		environment: cfg.env || 'production'
 	},
 
 	/*
@@ -52,7 +51,7 @@ export default {
 		retry: {
 			retries: 3
 		},
-		baseURL: config.api
+		baseURL: cfg.api
 	},
 	/*
 	 ** Global CSS
@@ -66,12 +65,22 @@ export default {
 	/*
 	 ** Plugins to load before mounting the App
 	 */
-	plugins: [],
+	plugins: ['~/plugins/composition-api'],
+
 	/*
 	 ** Nuxt.js dev-modules
 	 */
 	buildModules: ['@nuxt/typescript-build', '@nuxtjs/stylelint-module'],
-
+	/*
+	 ** Apollo
+	 */
+	apollo: {
+		clientConfigs: {
+			default: {
+				httpEndpoint: 'https://api.silvandiepen.nl/graphql'
+			}
+		}
+	},
 	/*
 	 ** Nuxt.js modules
 	 */
@@ -90,6 +99,7 @@ export default {
 				}
 			}
 		],
+		'@nuxtjs/apollo',
 		// 		'@nuxtjs/google-analytics',
 		'@nuxtjs/axios',
 		'@nuxtjs/pwa'
@@ -124,6 +134,15 @@ export default {
 					loader: 'eslint-loader',
 					exclude: /(node_modules)/
 				});
+
+				// config.module.rules.push({
+				// 	test: /\.ts(x)?$/,
+				// 	loader: 'ts-loader',
+				// 	exclude: /node_modules/,
+				// 	options: {
+				// 		appendTsSuffixTo: [/\.vue$/]
+				// 	}
+				// });
 			}
 		}
 	}

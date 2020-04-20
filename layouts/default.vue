@@ -1,20 +1,20 @@
 <template>
 	<div class="layout layout-default" :class="colorMode" :style="headerStyle">
-		<LayoutHeader />
+		<Header />
 		<nuxt />
-		<LayoutFooter />
+		<Footer />
 	</div>
 </template>
 
 <script>
-import LayoutHeader from '~/components/layout/header.vue';
-import LayoutFooter from '~/components/layout/footer.vue';
+import { mapState } from 'vuex';
+import { Header, Footer } from '~/components/layout';
 
 export default {
 	transition: 'page',
 	components: {
-		LayoutHeader,
-		LayoutFooter
+		Header,
+		Footer
 	},
 	data: () => ({
 		scroll: {
@@ -24,9 +24,7 @@ export default {
 		}
 	}),
 	computed: {
-		colorMode() {
-			return this.$store.state.ui.colorMode;
-		},
+		...mapState('ui', ['favicon', 'colorMode']),
 		headerStyle() {
 			return {
 				'--scroll-top-px': `${this.scroll.position}px`,
@@ -40,6 +38,7 @@ export default {
 			};
 		}
 	},
+	watch: {},
 	mounted() {
 		window.addEventListener('scroll', () => {
 			this.scroll.last = window.scrollY;

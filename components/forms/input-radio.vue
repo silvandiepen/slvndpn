@@ -9,7 +9,7 @@
 			:name="name"
 		/>
 		<label :for="ID">
-			<span class="input-field__text" v-html="label"></span>
+			<span class="input-field__text">{{ label }}</span>
 			<slot></slot>
 		</label>
 	</InputField>
