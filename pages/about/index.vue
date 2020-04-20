@@ -1,7 +1,7 @@
 <template>
 	<main class="page page--about">
-		<PageHeading>
+		<Heading>
 			<h1>About</h1>
-		</PageHeading>
+		</Heading>
 	</main>
 </template>

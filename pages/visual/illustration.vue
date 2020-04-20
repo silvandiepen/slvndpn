@@ -1,7 +1,7 @@
 <template>
 	<main class="page page--illustration">
-		<PageHeading>
+		<Heading>
 			<h1>Creating a character</h1>
-		</PageHeading>
+		</Heading>
 	</main>
 </template>

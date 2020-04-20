@@ -1,9 +1,7 @@
 <template>
 	<main class="page page--code">
-		<PageHeading>
-			<h1>Writing code, for different purposes..</h1>
-		</PageHeading>
-		<PageContent class="background--brownlight">
+		<Heading title="Writing code, for different purposes.." />
+		<Content class="background--brownlight">
 			<h2>Open Source</h2>
 			<h4>
 				A very important thing in the life of any frontend developer must be
@@ -15,8 +13,8 @@
 				contributing anything valuable is something you can determine by
 				yourself, but I'm doing my best to do so.
 			</p>
-		</PageContent>
-		<PageContent class="background--beigedark">
+		</Content>
+		<Content class="background--beigedark">
 			<h2>Design Systems</h2>
 			<h4>
 				Might be a bit opinionated, but I put Design systems under code. Because
@@ -36,9 +34,9 @@
 				A design system should be a tool which designers and developers both
 				love and can contribute to in an easy way.
 			</p>
-		</PageContent>
+		</Content>
 
-		<PageContent class="background--beige">
+		<Content class="background--beige">
 			<h2>Generators</h2>
 			<h4>
 				As as truely lazy developers, you try to make things easier and easier.
@@ -55,12 +53,17 @@
 				NuxtJS (Vue) project with all the settings I usually use. Including my
 				own Sass framework (Henri's).
 			</p>
-		</PageContent>
+		</Content>
 	</main>
 </template>
 
 <script>
+import { Content, Heading } from '@/components';
 export default {
+	components: {
+		Content,
+		Heading
+	},
 	head() {
 		return {
 			title: 'Code'

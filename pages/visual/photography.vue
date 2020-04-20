@@ -1,7 +1,7 @@
 <template>
 	<main class="page page--photography">
-		<PageHeading>
+		<Heading>
 			<h1>From real world to a flat image.</h1>
-		</PageHeading>
+		</Heading>
 	</main>
 </template>

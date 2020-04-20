@@ -522,3 +522,12 @@ export default Vue.extend({
 	}
 });
 </script>
+<style lang="scss">
+.content-item {
+	transform: scale(0.5);
+	transition: transform 0.5s ease-in-out;
+	.is-inview & {
+		transform: scale(1);
+	}
+}
+</style>

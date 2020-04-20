@@ -1,11 +1,11 @@
 <template>
 	<main class="page page--blog">
-		<PageHeading v-if="article" class="background--white">
+		<Heading v-if="article" class="background--white">
 			<h1>{{ article.title }}</h1>
-		</PageHeading>
-		<PageContent v-if="article" class="background--beige">
+		</Heading>
+		<Content v-if="article" class="background--beige">
 			<Markdown :source="article.content" />
-		</PageContent>
+		</Content>
 		<BlogList></BlogList>
 	</main>
 </template>

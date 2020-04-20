@@ -1,7 +1,7 @@
 <template>
 	<main class="page page--visual">
-		<PageHeading>
+		<Heading>
 			<h1>Visual</h1>
-		</PageHeading>
+		</Heading>
 	</main>
 </template>

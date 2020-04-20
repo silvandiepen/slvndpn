@@ -14,9 +14,11 @@
 </template>
 <script>
 import Slide from '~/components/slider/slide.vue';
+import { Container } from '@/components';
 export default {
 	components: {
-		Slide
+		Slide,
+		Container
 	},
 	props: {
 		data: {

@@ -45,7 +45,7 @@ export const NavigationData: any = [
 			},
 			{
 				name: 'Preferences',
-				link: '/code/preferences',
+				link: '/code/prefs',
 				active: false
 			}
 		]

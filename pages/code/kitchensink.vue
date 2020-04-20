@@ -1,16 +1,16 @@
 <template>
 	<main class="page page--code">
-		<PageHeading>
+		<Heading>
 			<h1>This is just the kitchensink for this website...</h1>
-		</PageHeading>
-		<PageContent class="background--red">
+		</Heading>
+		<Content class="background--red">
 			<h3>
 				Showing off all the components and style is my thing.. that's why it's
 				just public. It helps me to keep track of everything and see if I didn't
 				break anything.
 			</h3>
-		</PageContent>
-		<pageContent>
+		</Content>
+		<Content>
 			<h2>Headers</h2>
 
 			<table>
@@ -47,8 +47,8 @@
 					</tr>
 				</tbody>
 			</table>
-		</pageContent>
-		<pageContent class="background--beige">
+		</Content>
+		<Content class="background--beige">
 			<h2>Forms</h2>
 			<h4>Text Inputs</h4>
 			<table>
@@ -76,7 +76,7 @@
 				</tbody>
 			</table>
 			<h4>Options</h4>
-		</pageContent>
+		</Content>
 		<div class="row small-full medium-half">
 			<PageBlock class="column background--skyblue">
 				<h3>Radio</h3>
@@ -139,7 +139,12 @@
 </template>
 
 <script>
+import { Content, Heading } from '@/components';
 export default {
+	components: {
+		Content,
+		Heading
+	},
 	data: () => ({
 		exampleOptions: [
 			{ label: 'Option 1', value: true },

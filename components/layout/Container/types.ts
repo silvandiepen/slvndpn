@@ -17,4 +17,5 @@ export interface currentProps {
 	isOnTop: boolean;
 	isOnBottom: boolean;
 	isOffTop: boolean;
+	isInFullView: boolean;
 }

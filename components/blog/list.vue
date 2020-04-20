@@ -1,5 +1,5 @@
 <template>
-	<PageContent class="background--black article-list">
+	<Content class="background--black article-list">
 		<ul v-if="articleList" class="article-list__list">
 			<li
 				v-for="(article, idx) in articleFiles"
@@ -34,7 +34,7 @@
 				</NuxtLink>
 			</li>
 		</ul> -->
-	</PageContent>
+	</Content>
 </template>
 <script>
 export default {

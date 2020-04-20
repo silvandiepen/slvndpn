@@ -63,6 +63,7 @@ export default Vue.extend({
 		left: 50%;
 		height: 100vh;
 		transform: translateX(-50%);
+		object-fit: cover;
 		pointer-events: none;
 		margin: 0;
 	}

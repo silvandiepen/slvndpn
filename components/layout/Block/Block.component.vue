@@ -1,9 +1,11 @@
 <template>
-	<Container class="page-block">
-		<div class="content">
-			<slot></slot>
-		</div>
-	</Container>
+	<div class="block">
+		<Container class="page-block">
+			<div class="content">
+				<slot></slot>
+			</div>
+		</Container>
+	</div>
 </template>
 
 <script>

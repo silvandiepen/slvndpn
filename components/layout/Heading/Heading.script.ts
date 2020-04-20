@@ -1,9 +1,7 @@
 import { Vue, Component, PropSync } from 'vue-property-decorator';
-import { Container } from '@/components';
 
 @Component<Heading>({
-	name: 'Heading',
-	components: { Container }
+	name: 'Heading'
 })
 export default class Heading extends Vue {
 	@PropSync('title', { type: String }) syncedName!: string;
