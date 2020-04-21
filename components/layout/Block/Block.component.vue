@@ -1,10 +1,8 @@
 <template>
-	<div class="block">
-		<Container class="page-block">
-			<div class="content">
-				<slot></slot>
-			</div>
-		</Container>
+	<div class="block" :class="sizeClasses">
+		<div class="content">
+			<slot></slot>
+		</div>
 	</div>
 </template>
 
@@ -12,7 +10,19 @@
 import { Container } from '@/components';
 export default {
 	name: 'Block',
-	component: { Container }
+	props: {
+		size: {
+			type: String,
+			default: 'default'
+		}
+	},
+	data: () => ({
+		sizeClasses: []
+	}),
+	component: { Container },
+	created() {
+		this.sizeClasses = [`block--${this.$props.size}`];
+	}
 };
 </script>
 
