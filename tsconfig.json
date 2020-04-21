@@ -7,7 +7,6 @@
 		"esModuleInterop": true,
 		"allowJs": true,
 		"sourceMap": true,
-		"strict": true,
 		"noEmit": true,
 		"experimentalDecorators": true,
 		"baseUrl": ".",
