@@ -3,6 +3,7 @@ export type NavigationItem = {
 	link?: String;
 	url?: String;
 	active: Boolean;
+	backgroundImage: Array<string>;
 };
 
 export type NavigationGroup = {

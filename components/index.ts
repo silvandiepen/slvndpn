@@ -20,3 +20,4 @@ export * from './layout';
 // export { default as Trigger } from './navigation/trigger.vue';
 
 export { default as Button } from './Button.vue';
+export { Logo } from './Logo';

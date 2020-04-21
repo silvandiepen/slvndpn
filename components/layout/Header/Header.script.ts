@@ -1,14 +1,13 @@
-import { Vue, Component } from 'vue-property-decorator';
-// import { Logo } from '@/components';
-
-@Component<Header>({
-	name: 'Header'
-	// components: { Logo }
-})
-export default class Header extends Vue {
-	firstName = 'Sil';
-	lastName = 'van Diepen';
-	mounted() {
-		// console.log('logo', Logo);
+import { defineComponent } from '@vue/composition-api';
+import { Logo } from '../../Logo';
+export default defineComponent({
+	setup() {
+		const firstName = 'Sil';
+		const lastName = 'van Diepen';
+		return {
+			firstName,
+			lastName,
+			Logo
+		};
 	}
-}
+});

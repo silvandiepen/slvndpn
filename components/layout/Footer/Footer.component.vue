@@ -1,10 +1,23 @@
 <template>
 	<footer id="footer" class="footer">
+		<div class="footer__backgrounds">
+			<img
+				v-for="(image, idx) in backgroundImage"
+				:key="idx"
+				class="footer__background"
+				:src="image.image"
+			/>
+			<div class="footer__background"></div>
+		</div>
 		<div class="row center small-full xlarge-three-quarter">
 			<div class="column">
 				<nav class="nav">
 					<div class="row small-half medium-fifth">
-						<div v-for="(group, idg) in navigation" :key="idg" class="column">
+						<div
+							v-for="(group, idg) in NavigationData"
+							:key="idg"
+							class="column"
+						>
 							<h6 v-if="group.link">
 								<NuxtLink :to="group.link">{{ group.title }}</NuxtLink>
 							</h6>
@@ -15,6 +28,7 @@
 									:key="idi"
 									class="nav__item"
 									:class="{ 'nav__item--inactive': !item.active }"
+									@mouseover="addImage(item)"
 								>
 									<NuxtLink v-if="item.link" class="nav__link" :to="item.link">
 										<span class="nav__text">{{ item.name }}</span>
@@ -35,6 +49,6 @@
 	</footer>
 </template>
 
-<script lang="ts" src="./Footer.script.ts" />
+<script src="./Footer.script.js" />
 
 <style lang="scss" src="./Footer.style.scss" />
