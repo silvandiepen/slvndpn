@@ -28,6 +28,10 @@ export const getters = {
 };
 
 export const actions = {
+	setArticles({ commit }, articles) {
+		// console.log(articles);
+		commit('setArticles', articles);
+	},
 	fetchArticles({ state, commit }) {
 		if (state.loaded) return;
 

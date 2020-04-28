@@ -163,34 +163,34 @@
 			</Block>
 			<Block size="medium" class="background--black">
 				<img
-					src="https://api.silvandiepen.nl/wp-content/uploads/2019/09/kraber_icon-white.svg"
+					src="https://s3-eu-central-1.amazonaws.com/api.silvandiepen.nl/wp-content/uploads/2020/04/21124712/rm-black-row.svg"
 				/>
 			</Block>
-			<Block size="small" class="background--red" />
+			<Block size="small" class="background--yellow" />
 			<Block size="xsmall" class="background--black" />
-			<Block size="xsmall" class="background--red" />
+			<Block size="xsmall" class="background--yellow" />
 			<Block size="xsmall" class="background--white" />
 
-			<Block size="small" class="background--white">
+			<Block size="small" class="background--black">
 				<img
-					src="https://api.silvandiepen.nl/wp-content/uploads/2019/09/kraber_text.svg"
+					src="https://s3-eu-central-1.amazonaws.com/api.silvandiepen.nl/wp-content/uploads/2020/04/21124713/rm-icon-white.svg"
 				/>
 			</Block>
 			<Block size="small" class="background--white">
 				<img
-					src="https://api.silvandiepen.nl/wp-content/uploads/2019/09/kraber_logo.svg"
+					src="https://s3-eu-central-1.amazonaws.com/api.silvandiepen.nl/wp-content/uploads/2020/04/21124714/rm-icon-yellow.svg"
 				/>
 			</Block>
-			<Block size="xsmall" class="background--red" />
-			<Block size="xsmall" class="background--reddark" />
+			<Block size="xsmall" class="background--yellow" />
+			<Block size="xsmall" class="background--yellowdark" />
 			<Block size="xsmall" class="background--black" />
-			<Block size="xsmall" class="background--red" />
+			<Block size="xsmall" class="background--yellowlight" />
 		</section>
 
 		<Content>
-			<h4>Kraber</h4>
+			<h4>RM</h4>
 			<p>
-				Concept logo for a steal working factory based in Russia.
+				Zinc Plating in Nhiznhny Novgorod
 			</p>
 		</Content>
 	</main>
@@ -210,13 +210,7 @@ export default Vue.extend({
 </script>
 <style lang="scss">
 @import '~tools';
-.tiggy-fred-heading {
-	background-repeat: no-repeat;
-	background-position: center right;
-	background-size: contain;
-	@media #{$small-only} {
-		background-position: center center;
-		background-size: 200vw;
-	}
+.page--logos {
+	content: 'logos';
 }
 </style>

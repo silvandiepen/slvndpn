@@ -7,7 +7,7 @@
 						firstName.split('')[i - 1]
 					}}</span>
 				</span>
-				<Logo v-if="Logo" class="header__logo-icon"></Logo>
+				<!-- <Logo v-if="Logo" class="header__logo-icon"></Logo> -->
 			</NuxtLink>
 			<span class="header__lastname">{{ lastName }}</span>
 		</h3>
@@ -16,15 +16,15 @@
 
 <script lang="ts">
 import { defineComponent } from '@vue/composition-api';
-import { Logo } from '../../Logo';
+// import { Logo } from '../../Logo';
 export default defineComponent({
 	setup() {
 		const firstName = 'Sil';
 		const lastName = 'van Diepen';
 		return {
 			firstName,
-			lastName,
-			Logo
+			lastName
+			// Logo
 		};
 	}
 });

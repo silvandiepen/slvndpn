@@ -78,6 +78,9 @@ export default {
 		clientConfigs: {
 			default: {
 				httpEndpoint: 'https://api.silvandiepen.nl/graphql'
+				// httpLinkOptions: {
+				// 	credentials: 'include'
+				// }
 			}
 		}
 	},

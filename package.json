@@ -10,7 +10,7 @@
 		"dev:staging": "sh scripts/staging.sh",
 		"dev:production": "sh scripts/production.sh",
 		"precommit": "lint && stylelint",
-		"generate": "nuxt generate",
+		"generate": "nuxt-ts generate",
 		"generate:develop": "cp ./config/develop.js ./config/latest.js && nuxt generate",
 		"generate:staging": "cp ./config/staging.js ./config/latest.js && nuxt generate",
 		"generate:production": "cp ./config/production.js ./config/latest.js && nuxt generate",
